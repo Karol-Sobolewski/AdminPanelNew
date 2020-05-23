@@ -1,0 +1,57 @@
+/*** Colors ***/
+
+/* Main*/
+$main-color: #f58220;
+$main-color-active: #ffa200;
+$secondary-color: #979797;
+$secondary-color-active: #bababa;
+$tertiary-color: #80bfca;
+$tertiary-color-active: #789ba1;
+
+$hoover-color-default: #f1f3f3;
+$disabled-color: #e3e3e3;
+
+$light-color: #ffffff;
+$medium-color: #f2f2f2;
+$dark-color: #191919; 
+
+/*Text*/
+$header-color: #a6a6a6;
+$text-color: #333333;
+
+/*Links*/
+$link-color: #56819f;
+$link-color-active: #ffa200;
+
+/*Notifications*/
+$notification-pos-color: #96cc9b;
+$notification-pos-color-active: #74b67a;
+$notification-neg-color: #ec7171;
+$notification-neg-color-active: #de5252;
+
+/*Status*/
+$success-color: #04ae00;
+$error-color: #ff0000;
+
+/*** Font sizes ***/
+$paragraph-font-size: 16px;
+
+/*** Fonts ***/
+$brand-font: "Open Sans", Helvetica, Arial;
+$paragraph-font: "Open Sans", Helvetica, Arial;
+$font-light: 300;
+$font-normal: 400;
+$font-semibold: 500;
+$font-bold: 700;
+
+
+
+$opacity-half: 0.5;
+$opacity-full: 1;
+
+$transition: all .3s;
+$radius: 4px;
+
+$base-size: 1rem;
+
+$box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.2);

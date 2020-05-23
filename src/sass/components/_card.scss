@@ -1,0 +1,27 @@
+.card__header {
+    display: flex;
+    flex: 1;
+    border-bottom: 2px solid $secondary-color;
+    width: 100%;
+    align-items: center;
+    //justify-content: center;
+    span {
+        margin-left: 1rem;
+    }
+}
+.card__wrapper { 
+    display: flex;
+    flex: 11;
+    overflow: hidden;
+    width: 100%;
+    //border: 2px solid red;
+    border-radius: 2px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: $dark-color;
+    
+    &--secondary{
+        background-color: $secondary-color;
+    }
+}

@@ -1,0 +1,17 @@
+.btn {
+    display: inline-block;
+    overflow: hidden;
+    margin: 5px;
+    height: 32px;
+    border: none;
+    border-radius: 2px;
+    padding: 0 16px;
+    background-color: $main-color;
+    cursor: pointer;
+    align-items: center;
+    color: $dark-color;
+    
+    &--secondary{
+        background-color: $secondary-color;
+    }
+}
