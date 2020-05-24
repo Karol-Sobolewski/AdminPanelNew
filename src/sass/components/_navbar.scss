@@ -7,7 +7,41 @@
     width: 12rem;
     height: 100vh;
     background-color: $dark-color;
-  }
+    &:hover{
+        margin-left: 0;
+        .nav__logo {
+            @include flex(row, center, space-between);
+            .logo {
+            display: block;
+            }
+        }
+        .nav__menu {
+            .menu__link {
+                flex-direction: row;
+            }
+            .menu__link__text {
+                display: block;
+            }
+        }
+        .nav__manager{
+            .manager__label {
+                display: block;
+            }
+            .manager__card {
+                justify-content: space-around;
+            }
+
+            .manager__photo {
+                width: 3rem;
+                height: 3rem;
+            }
+            .manager__name {
+                display: block;
+            }
+        }
+    }
+}
+
   .nav__container.toggle {
     margin-left: 0;
     .nav__logo {
@@ -41,8 +75,6 @@
         }
     }
 }
-
-
 
 .page__nav.toggle {
     z-index: 10;

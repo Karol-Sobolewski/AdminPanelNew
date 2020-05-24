@@ -35,6 +35,7 @@ import {select, classNames} from "./settings.js";
       
               /* change url hash */
               window.location.hash = '#/' + id;
+              
               sidebar.classList.remove('toggle');
             });
           }
