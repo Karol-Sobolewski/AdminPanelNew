@@ -23,3 +23,12 @@
         }
     }
 }
+
+@media (max-width: 767px) {
+    .calendar__wrapper{
+        input{
+            width: 20vw;
+            font-size: 8px;
+        }
+    }
+}

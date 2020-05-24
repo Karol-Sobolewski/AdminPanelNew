@@ -124,10 +124,17 @@
         cursor: pointer;
         &:hover{
             color: $light-color;
-            background-color: #282828;
+            background: none;
             .menu__link__icon{
-                border-left: solid 5px $main-color;
+                border-left: solid 5px $medium-color;
             }
+        }
+    }
+    .menu__link.active {
+        color: $light-color;
+        background-color: #282828;
+        .menu__link__icon{
+            border-left: solid 5px $main-color;
         }
     }
     .menu__link__text {

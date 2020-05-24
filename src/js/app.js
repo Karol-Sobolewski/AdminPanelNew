@@ -54,13 +54,17 @@ import {select, classNames} from "./settings.js";
             );
           }
         },
+
     initSideBar: function (){
-        const hamburger = document.querySelector('.hamburger');
-        const sidebar = document.querySelector('.nav__container');
+      const hamburger = document.querySelector('.hamburger');
+      const sidebar = document.querySelector('.nav__container');
+      const navbutton = document.querySelectorAll(select.nav.links);
 
         hamburger.addEventListener('click', function(){
             sidebar.classList.toggle('toggle');
         })
+
+
     },
 
     init: function(){
