@@ -5,6 +5,7 @@
   align-items: stretch;
   padding: 1rem 0 1rem 0;
   width: 100%;
+  max-height: 100%;
 }
 
 .statistics__wrapper {
@@ -34,8 +35,6 @@
     justify-content: space-around;
     align-items: stretch;
     padding: 1rem;
-    width: 90%;
-    height: 90%;
     text-align: center;
 }
 
@@ -57,3 +56,14 @@
     align-self: center;
 }
 
+@media (max-width: 767px) {
+    .statistics__container{
+        padding: 0;
+    }
+    .statistics__wrapper {
+        padding: 0.5rem;
+    }
+    .statisctics--row{
+        padding: 0.2rem;
+    }
+}    

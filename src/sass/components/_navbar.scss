@@ -10,7 +10,13 @@
   }
   .nav__container.toggle {
     margin-left: 0;
-    .nav__menu{
+    .nav__logo {
+        @include flex(row, center, space-between);
+        .logo {
+        display: block;
+        }
+    }
+    .nav__menu {
         .menu__link {
             flex-direction: row;
         }
@@ -46,12 +52,11 @@
         transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
         padding-left: 0.5rem;
     }
-    .nav__link{
+    .nav__link {
         display: flex;
         flex-direction: row;
     }
-    .nav__link__icon{
-        //padding: 1rem 0 1rem 1rem;
+    .nav__link__icon {
         margin: 0;
     }
 
@@ -62,7 +67,6 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            //padding: 1rem;
             margin: 0;
             img{
                 width: 5vmin;
@@ -89,8 +93,9 @@
 }
 
 .nav__logo {
-
+    @include flex(row-reverse, center, flex-start);
     .logo {
+        display: none;
         font-family: 'Pacifico', cursive;
         color: $light-color;
     }
