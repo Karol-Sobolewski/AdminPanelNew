@@ -24,6 +24,7 @@ import {select, classNames} from "./settings.js";
           for(let link of thisApp.navLinks){
             link.addEventListener('click', function(event){
               const clickedElement = this;
+              const sidebar = document.querySelector('.nav__container');
               event.preventDefault();
       
               /* get page id from href atribute */
@@ -34,6 +35,7 @@ import {select, classNames} from "./settings.js";
       
               /* change url hash */
               window.location.hash = '#/' + id;
+              sidebar.classList.remove('toggle');
             });
           }
         },
@@ -58,7 +60,6 @@ import {select, classNames} from "./settings.js";
     initSideBar: function (){
       const hamburger = document.querySelector('.hamburger');
       const sidebar = document.querySelector('.nav__container');
-      const navbutton = document.querySelectorAll(select.nav.links);
 
         hamburger.addEventListener('click', function(){
             sidebar.classList.toggle('toggle');
