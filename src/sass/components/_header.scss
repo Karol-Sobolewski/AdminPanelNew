@@ -1,11 +1,14 @@
-.page__header {
+.header__container {
+    position: fixed;
+    z-index: 5;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: row-reverse;
+    box-shadow: $box-shadow;
 }
 
-.header__container {
+.header__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,15 +25,13 @@
             color: $main-color;
         }
     }
-}
-
-.header__container--wide {
-    flex: 0 0 15rem;
-    justify-content: space-around;
-}
-
-.header__container--narrow {
-    flex: 0 0 5rem;
+    &--wide{
+        flex: 0 0 15rem;
+        justify-content: space-around;
+    }
+    &--narrow{
+        flex: 0 0 5rem;
+    }
 }
 
 .header__text {
@@ -47,7 +48,7 @@
 }
 
 @media (max-width: 767px) {
-    .page__header {
+    .header__container {
       display: none;
     }
 }   

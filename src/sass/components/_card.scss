@@ -1,27 +1,27 @@
+
 .card__header {
     display: flex;
-    flex: 1;
-    border-bottom: 2px solid $secondary-color;
-    width: 100%;
+    justify-content: flex-start;
     align-items: center;
-    //justify-content: center;
+    flex: 1;
+    width: 100%;
+    border-bottom: 2px solid $medium-color;
+    
+    color: $secondary-color;
     span {
         margin-left: 1rem;
+        text-transform: uppercase;
     }
 }
+
 .card__wrapper { 
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex: 11;
     overflow: hidden;
     width: 100%;
-    //border: 2px solid red;
     border-radius: 2px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    color: $dark-color;
     
-    &--secondary{
-        background-color: $secondary-color;
-    }
+    padding: 1rem;
 }

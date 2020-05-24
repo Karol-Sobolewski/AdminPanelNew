@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,95 +7,274 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <section class="page">
+  <header class="header__container">
+      <div class="header__wrapper header__wrapper--narrow">
+        <i class="icon header__icon icon-quit"></i>
+      </div>
+      <div class="header__wrapper header__wrapper--wide">
+        <i class="icon header__icon icon-profile"></i>
+        <a class="link header__link">Leonardo</a>
+      </div>
+      <div class="header__wrapper header__wrapper--narrow">
+        <i class="icon header__icon icon-notification"></i>
+      </div>
+      <div class="header__wrapper header__wrapper--wide">
+        <i class="icon header__icon icon-wallet"></i>
+        <a class="header__text">$1,500.00</a>
+        <i class="icon icon-arrow-down-small"></i>
+      </div>
+  </header>
+  <nav class="nav__container">
+    <div class="nav__wrapper nav__logo">
+      <span class="logo" href="#general">JUST DO IT</span>
+      <i class="hamburger fas fa-bars"></i>
+    </div>
+    <div class="nav__wrapper nav__menu">
+      <ul class="menu__link__wrapper">
+        <li class="menu__link" href="#general">
+          <i class="icon menu__link__icon icon-general"></i>
+          <span class="menu__link__text">General</span>
+        </li>
+        <li class="menu__link" href="#details">
+          <i class="icon menu__link__icon icon-details"></i>
+          <span class="menu__link__text">Details</span>
+        </li>
+        <li class="menu__link" href="#links">
+          <i class="icon menu__link__icon icon-links"></i>
+          <span class="menu__link__text">Links</span>
+        </li>
+        <li class="menu__link" href="#banners">
+          <i class="icon menu__link__icon icon-banners"></i>
+          <span class="menu__link__text">Banners</span>
+        </li>
+        <li class="menu__link" href="#personal-data">
+          <i class="icon menu__link__icon icon-personaldata"></i>
+          <span class="menu__link__text">Personal Data</span>
+        </li>
+        <li class="menu__link" href="#payout">
+          <i class="icon menu__link__icon icon-payout"></i>
+          <span class="menu__link__text">Payout</span>
+        </li>
+        <li class="menu__link" href="#postback">
+          <i class="icon menu__link__icon icon-postback"></i>
+          <span class="menu__link__text">Postback</span>
+        </li>
+      </ul>
+    </div>
+    <div class="nav__wrapper nav__manager">
+      <label class="manager__label">Your Manager</label>
+      <div class="manager__card">
+        <img class="manager__photo" src="images/manager.png"></img>
+        <span class="manager__name link">Michael E.</span>
+      </div>
+    </div>
+    <div class="nav__wrapper nav__menu nav__account">
+      <ul class="menu__link__wrapper">
+        <li class="menu__link">
+          <i class="icon menu__link__icon icon-profile"></i>
+          <span class="link menu__link__text">Leonardo</span>
+        </li>
+        <li class="menu__link">
+          <i class="icon menu__link__icon icon-notification"></i>
+          <span class="menu__link__text">Last notification</span>
+        </li>
+        <li class="menu__link">
+          <i class="icon menu__link__icon icon-wallet"></i>
+          <div class="menu__link__text">
+            <span>1,500.00</span>
+            <i class="drop__icon icon icon-arrow-right"></i>
+          </div>
+        </li>
+        <li class="menu__link menu__link--quit">
+          <i class="icon menu__link__icon icon-quit"></i>
+        </li>
+  </nav>
+  <div id="pages">
+    <section id="general">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>General statistic</span>
+          </div>
+          <div class="card__wrapper">
+              <div class="calendar__container">
+                <div class="calendar__wrapper">
+                  <input type="date">
+                  <input type="date">
+                  <span class="icon-calendar"></span>
+                </div>  
+                <button class="btn icon-refresh"></button>
+              </div>
+              <div class="statistics__container">
+                <div class="statistics__wrapper">
+                  <div class="statisctics--row">
+                    <div class="card__statistics">
+                      <span>Visit Signups</span><span>124</span>
+                    </div>
+                    <div class="card__statistics">
+                      <span>FTD</span><span>445</span>
+                    </div>
+                  </div>
+                  <div class="statisctics--row">
+                    <div class="card__statistics">
+                      <span>Net Deposit</span><span>564</span>
+                    </div>
+                    <div class="card__statistics">
+                      <span>Turn over</span><span>432</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="statistics__wrapper">
+                  <div class="statistics__graph__container">
+                      <div class="graph__wrapper">
+                        <span>Earnings chart</span>
+                        <img class="graph" src="images/graph.png"></img>
+                      </div>
+                  </div>
+                </div>
+            </div>  
+          </div>
+        </div>   
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Links</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+    </section>
+    <section id="details">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Details</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="links">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Links</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>    
+    </section>
+    <section id="banners">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Banners</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="personal-data">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Personal data</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>    
+    </section>
+    <section id="payout">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Payout</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>  
+    </section>
+    <section id="postback">
+      <div class="page__container">
+        <div class="page__card__container">
+          <div class="card__header">
+            <span>Postback</span>
+          </div>
+          <div class="card__wrapper">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!--<script id="template-general-page" type="text/x-handlebars-template">
+  </script>-->
+  <!--<section href="#general" class="page">
     <div class="page__nav">
-      <div class="nav__container">
-        <div class="nav__wrapper logo">
-          <span>JUST DO IT</span>
-          <i class="hamburger fas fa-bars"></i>
-        </div>
-        <div class="nav__wrapper nav__links">
-          <ul>
-            <li class="nav__link"><i class="icon nav__link__icon icon-general"></i><span
-                class="nav__link__text">General</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-details"></i><span
-                class="nav__link__text">Details</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-links"></i><span
-                class="nav__link__text">Links</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-banners"></i><span
-                class="nav__link__text">Banners</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-personaldata"></i><span
-                class="nav__link__text">Personal Data</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-payout"></i><span
-                class="nav__link__text">Payout</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon icon-postback"></i><span
-                class="nav__link__text">Postback</span></li>
-          </ul>
-        </div>
-        <div class="nav__wrapper nav__manager">
-          <span class="manager__title">Your Manager</span>
-          <div class="manager__photo"><img src="images/manager.png"></img><span class="manager__name link">Michael
-              E.</span></div>
-        </div>
-      </div>
-      <div class="nav__container">
-        <div class="nav__wrapper nav__links nav__menu">
-          <ul>
-            <li class="nav__link"><i class="icon nav__link__icon nav__link__menu__icon icon-profile"></i><span
-                class="link nav__link__text">Leonardo</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon nav__link__menu__icon icon-notification"></i><span
-                class="nav__link__text">Last notification</span></li>
-            <li class="nav__link"><i class="icon nav__link__icon nav__link__menu__icon icon-wallet"></i><span
-                class="nav__link__text">1,500.00</span><i class="drop__icon icon icon-arrow-right"></i></li>
-            <li class="nav__link nav__link--right"><i class="icon nav__link__icon nav__link__menu__icon icon-quit"></i>
-            </li>
-          </ul>
-        </div>
-      </div>
+      
     </div>
+   
     <div class="page__container">
-      <div class="page__header">
-        <div class="header__container header__container--narrow">
-          <i class="icon header__icon icon-quit"></i>
-        </div>
-        <div class="header__container header__container--wide">
-          <i class="icon header__icon icon-profile"></i>
-          <a class="link header__link">Leonardo</a>
-        </div>
-        <div class="header__container header__container--narrow">
-          <i class="icon header__icon icon-notification"></i>
-        </div>
-        <div class="header__container header__container--wide">
-          <i class="icon header__icon icon-wallet"></i>
-          <a class="header__text">$1,500.00</a>
-          <i class="icon icon-arrow-down-small"></i>
-        </div>
-      </div>
       <div class="page__card__container">
         <div class="card__header">
-          <span>GENERAL STATISTIC</span>
+          <span>General statistic</span>
         </div>
         <div class="card__wrapper">
-          <div class="btn btn--secondary">hello</div>
-          <div class="btn btn--secondary">hello</div>
+            <div class="calendar__container">
+              <div class="calendar__wrapper">
+                <input type="date">
+                <input type="date">
+                <span class="icon-calendar"></span>
+              </div>  
+              <button class="btn icon-refresh"></button>
+            </div>
+            <div class="statistics__container">
+              <div class="statistics__wrapper">
+                <div class="statisctics--row">
+                  <div class="card__statistics">
+                    <span>Visit Signups</span><span>124</span>
+                  </div>
+                  <div class="card__statistics">
+                    <span>FTD</span><span>445</span>
+                  </div>
+                </div>
+                <div class="statisctics--row">
+                  <div class="card__statistics">
+                    <span>Net Deposit</span><span>564</span>
+                  </div>
+                  <div class="card__statistics">
+                    <span>Turn over</span><span>432</span>
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="card__content statistics__graph__container">
+              <div class="graph__wrapper">
+                <span>Earnings chart</span>
+                <img class="graph" src="images/graph.png"></img>
+              </div>
+            </div>
         </div>
-      </div>
+      </div>       
       <div class="page__card__container">
         <div class="card__header">
-          <span>LINKS</span>
+          <span>Links</span>
         </div>
-        <div class="card__wrapper">
+        <div class="card__content">
           <div class="btn btn--secondary">hello</div>
           <div class="btn btn--secondary">hello</div>
         </div>
       </div>
-    </div>
-  </section>
-  <script src="js/script.js"></script>
+  </section>-->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script type="module" src="js/app.js"></script>
 </body>
 
 </html>

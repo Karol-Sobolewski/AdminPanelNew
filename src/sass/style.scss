@@ -1,6 +1,6 @@
 @import "variables";
-@import "layout";
 @import "mixins";
+@import "layout";
 @import "normalize";
 @import "glyphter";
 
@@ -12,8 +12,14 @@
 @import "components/navbar";
 @import "components/header";
 @import "components/card";
+
+
 /* Sections */
 //@import "section/registration_form";
 
+@import "sections/calendar";
+
 /* Pages / Views */
 //@import "pages/registration";
+
+@import "pages/statistics"

@@ -1,11 +1,42 @@
-.page__nav {
-    background-color:$dark-color;
-    color: $light-color;
+.nav__container {
+    @include flex(column, center, flex-start);
+    position: fixed;
     z-index: 10;
-    ul {
-        padding: 0;  
+    transition: margin .25s ease-out;
+    margin-left: -9rem;
+    width: 12rem;
+    height: 100vh;
+    background-color: $dark-color;
+  }
+  .nav__container.toggle {
+    margin-left: 0;
+    .nav__menu{
+        .menu__link {
+            flex-direction: row;
+        }
+        .menu__link__text {
+            display: block;
+        }
     }
-}    
+    .nav__manager{
+        .manager__label {
+            display: block;
+        }
+        .manager__card {
+            justify-content: space-around;
+        }
+
+        .manager__photo {
+            width: 3rem;
+            height: 3rem;
+        }
+        .manager__name {
+            display: block;
+        }
+    }
+}
+
+
 
 .page__nav.toggle {
     z-index: 10;
@@ -20,22 +51,22 @@
         flex-direction: row;
     }
     .nav__link__icon{
-        padding: 1rem 0 1rem 1rem;
+        //padding: 1rem 0 1rem 1rem;
         margin: 0;
     }
 
     .nav__manager {
         padding: 1rem;
         margin: 0;
-        .manager__photo{
+        .manager__photo {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             //padding: 1rem;
             margin: 0;
             img{
-                width: 3rem;
-                height: 3rem;
+                width: 5vmin;
+                height: 5vmin;
             }
         }
         .manager__title {
@@ -48,110 +79,117 @@
             transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.3s;
         }
     }
-    .nav__link--right {
-        justify-content: center;
-        &:hover{
-            .nav__link__icon{
-                //padding-left: 0.5rem;
-                color: $main-color;
-                border: none
-            }
-        }
-    }
+
 }    
 
 .nav__wrapper {
+    @include flex(row, center, space-between);
     padding: 1rem;
+    width: 100%;
 }
 
-.nav__links {
-    border-bottom: #f2f2f278 2px solid;
-    padding: 0px;
-}
+.nav__logo {
 
-.logo {
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Pacifico', cursive;
-    span{
-        cursor: pointer;
+    .logo {
+        font-family: 'Pacifico', cursive;
+        color: $light-color;
     }
-    i{
+    
+    .hamburger{
         cursor: pointer;
-        opacity: 0.5;
+        &:hover{
+            color: $light-color;
+        }
         &:active{
-            opacity: 1;
+            color: $light-color;
         }
-    }
-}
-
-.hamburger:hover {
-    opacity: 1;
-}
-
-.nav__link__text {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.nav__link {
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: flex-start;
-    padding-right: 1rem;
-    opacity: 0.5;
-    list-style: none;
-    cursor: pointer;
-    transition: all 0.25s linear;
-    &:hover{
-        opacity: 1;
-        background-color: #282828;
-        .nav__link__icon{
-            padding-left: 0.5rem;
-            border-left: solid 5px $main-color;
-        }
-    }
-}
-
-.nav__link__icon {
-    padding: 1rem 0 1rem 1rem;
-}
-
-.nav__manager {
-    color: #f2f2f278;
-    padding: 0;
-    border-bottom: #f2f2f278 2px solid;
-    .manager__photo {
-        display: flex;
-        flex-direction: row-reverse;
-        padding: 1rem;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        color: $link-color;
-        img {
-            width: 1.5rem;
-            height: 1.5rem;
-        }
-    }
-    .manager__title {
-        display: none;
-    }
-    .manager__name {
-        visibility: hidden;
-        opacity: 0;
     }
 }
 
 .nav__menu {
+    padding: 0;
+    border-bottom: $secondary-color 2px solid;
+    .menu__link__wrapper {
+        width: 100%;
+        padding: 0;
+        list-style: none;
+    }
+    .menu__link {
+        @include flex(row-reverse, center, flex-start);
+        cursor: pointer;
+        &:hover{
+            color: $light-color;
+            background-color: #282828;
+            .menu__link__icon{
+                border-left: solid 5px $main-color;
+            }
+        }
+    }
+    .menu__link__text {
+        display: none;
+    }
+    .menu__link__icon {
+        padding: 1rem;
+    }
+}
+
+.nav__manager {
+    @include flex(column, flex-start, space-between);
+    border-bottom: $secondary-color 2px solid;
+    line-height: 2rem;
+    padding-right: 0.75rem;
+    .manager__label {
+        display: none;
+    }
+    .manager__card {
+        @include flex(row-reverse, center, flex-start);
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        color: $link-color;
+        .manager__photo {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        .manager__name {
+            display: none;
+        }
+    }
+}
+
+.nav__account {
+    justify-self: flex-end;
+    align-self: flex-end;
     display: none;
-    border: none;
 }
 
 @media (max-width: 767px) {
-    .nav__menu {
+    .nav__container.toggle {
+        .nav__manager {
+            line-height: 1rem;
+            .manager__photo {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+        .menu__link--quit{
+            justify-content: center;
+            i:hover{
+                border: none  
+            } 
+        } 
+    }
+    .nav__account {
         display: block;
     }
   }
+
+@media (max-height: 667px) {
+    .nav__manager{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .menu__link__icon {
+        line-height: 0;
+    }
+}

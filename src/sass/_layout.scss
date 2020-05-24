@@ -1,30 +1,36 @@
 //@include flex(row, flex-start, flex-start);
 //@mixin flex($flex-direction, $align-items, $justify-content) {
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
-    max-width:100vw;
+    position: relative;
+    margin: 0;
+    //background: lighten($color-dark, 75%);
+    //font-family: $font-text;
+    font-size:  1.5vh;
+    line-height: 1.5vh;
+    //font-weight: $font-normal;
+    color: $secondary-color;
     overflow-x: hidden; 
 }
 
-.page {
+#pages {
+    > * {
+      display: none;
+    }
+  
+    > .active {
+      display: block;
+    }
+  }
+
+#page {
     display: flex;
-    //width: 100vw;
     height: 100%;
     max-width:100vw;
-}
-
-.page__nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    height: 100%;
-    width: 12rem;
-    margin-left: -9rem;
-    transition: margin .25s ease-out;
-  }
-  .page__nav.toggle {
-    margin-left: 0;
 }
 
  .page__container {
@@ -32,12 +38,14 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    //margin-top: 5rem;
+    padding-top: 5rem;
     width: 100%;
-    min-height: 100rem;
+    min-height: 100vh;
     background-color: $medium-color;
  } 
 
- .page__header {
+ .header__container {
     justify-content: flex-end;
     height: auto;
     min-width: 100%;
@@ -48,19 +56,19 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     margin: 2rem 1rem 2rem 4rem;
     width: 75%;
-    padding: 1rem 0 1rem 0;
+    padding: 0rem 0 1rem 0;
     height: 50rem;
     background-color: $light-color;
     box-shadow: $box-shadow;
 }
 
 @media (max-width: 767px) {
-    body {
-        overflow: hidden;
+    .page__container{
+        margin-top: 0; 
     }
     .page__card__container {
     width: 75%;

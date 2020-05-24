@@ -1,0 +1,25 @@
+.calendar__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid $medium-color;
+    color: $secondary-color;
+    
+    .calendar__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $medium-color;
+        padding: 1%;
+        //width: 50%;
+        input {
+            border: none;
+            text-align: center;
+            color: $secondary-color;
+            &:nth-child(2){
+                border-left: 1px solid $medium-color;
+            }
+        }
+    }
+}
