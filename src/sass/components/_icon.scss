@@ -1,5 +1,3 @@
 .icon{
-    &:hover{
-        //color: $main-color;
-    }
+    transition: $transition-linear;
 }

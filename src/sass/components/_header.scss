@@ -1,10 +1,7 @@
 .header__container {
+    @include flex(row-reverse, center, flex-start);
     position: fixed;
     z-index: 5;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row-reverse;
     box-shadow: $box-shadow;
 }
 
@@ -17,7 +14,7 @@
     font-size: 2rem;
     border-left: 2px solid $medium-color;
     line-height: 30px;
-    transition: all 0.25s linear;
+    transition: $transition-linear;
     cursor: pointer;
     &:hover{
         box-shadow: $box-shadow;
