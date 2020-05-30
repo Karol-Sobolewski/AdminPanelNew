@@ -13,17 +13,17 @@
 <body>
   <header class="header__container">
       <div class="header__wrapper header__wrapper--narrow">
-        <i class="icon header__icon icon-quit"></i>
+        <i class="icon--link icon-quit"></i>
       </div>
       <div class="header__wrapper header__wrapper--wide">
-        <i class="icon header__icon icon-profile"></i>
+        <i class="icon--link icon-profile"></i>
         <a class="link header__link">Leonardo</a>
       </div>
       <div class="header__wrapper header__wrapper--narrow">
-        <i class="icon header__icon icon-notification"></i>
+        <i class="icon--link icon-notification"></i>
       </div>
       <div class="header__wrapper header__wrapper--wide">
-        <i class="icon header__icon icon-wallet"></i>
+        <i class="icon--link icon-wallet"></i>
         <a class="header__text">$1,500.00</a>
         <i class="icon icon-arrow-down-small"></i>
       </div>
@@ -94,6 +94,13 @@
         </li>
   </nav>
   <div id="pages">
+    <script id="template-link-table" type="text/x-handlebars-template">
+      <div class="tr">
+        <div class="td link-table__title">{{ title }}</div>
+        <div class="td"> <a class="link" href={{link}}>{{link}}</a></div>
+        <div class="td"><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></div>                
+      </div>
+    </script>
     <section id="general">
       <div class="page__container">
         <div class="page__card__container">
@@ -144,6 +151,19 @@
           <span>Links</span>
         </div>
         <div class="card__wrapper">
+          <button class="btn">+ add new</button>
+          <div class="scroll-wrapper">
+              <table id="linkTable" class="linkTable">
+              </table>
+            <!--<table>
+              <tr>
+                <td>Home page</td>
+                <td class="link">http:/www.homepage.com</td>
+                <td><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></td>
+              </tr>
+            </table>-->
+          </div>
+          <button class="btn">+ add new</button>
         </div>
       </div>
     </section>
@@ -165,6 +185,17 @@
             <span>Links</span>
           </div>
           <div class="card__wrapper">
+            <div class="scroll-wrapper">
+              <table id="linkTable" class="linkTable">
+              </table>
+            <!--<table>
+              <tr>
+                <td>Home page</td>
+                <td class="link">http:/www.homepage.com</td>
+                <td><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></td>
+              </tr>
+            </table>-->
+          </div>
           </div>
         </div>
       </div>    
@@ -186,7 +217,52 @@
           <div class="card__header">
             <span>Personal data</span>
           </div>
-          <div class="card__wrapper">
+          <div class="card__wrapper card__wrapper--form">
+            <div class="scroll-wrapper">
+              <form action="" method="POST">
+                <div class="field">
+                  <label>Name</label>
+                  <input type="text" name="user-name" required>
+                </div>
+                <div class="field">
+                  <label>Surname</label>
+                  <input type="text" name="user-surname" required>
+                </div>
+                <div class="field">
+                  <label>Email</label>
+                  <input type="email" name="user-mail" required>
+                </div>
+                <div class="field">
+                  <label>Phone</label>
+                  <input type="tel" name="user-tel">
+                </div>
+                <hr>
+                <div class="field">
+                  <label>Skype</label>
+                  <input type="text" name="user-skype">
+                </div>
+                <div class="field">
+                  <label>ICQ</label>
+                  <input type="text" name="user-icq">
+                </div>
+                <div class="field">
+                  <label>Msn</label>
+                  <input type="text" name="user-msn">
+                </div>
+                <hr>
+                <div class="field">
+                  <label>Wallet</label>
+                  <input type="text" name="user-wallet">
+                </div>
+                <hr>
+                <div class="field">
+                  <label>Password</label>
+                  <input type="password" name="user-password">
+                </div>
+                <hr>
+                <button type="submit" class="btn">Save</button>
+              </form>
+            </div>  
           </div>
         </div>
       </div>    
@@ -214,6 +290,7 @@
       </div>
     </section>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script type="module" src="js/app.js"></script>
 </body>

@@ -1,0 +1,48 @@
+.card__wrapper--form {
+   // @include flex(column, center, space-around);
+    padding: 1vw;
+    //margin-top: 2vw;
+}
+
+form {
+    @include flex(column, center, space-around);
+    padding: 1vw;
+    width: 100%;
+}
+
+.field {
+    @include flex(row, center, space-around);
+    //border: 2px red solid;
+    margin: 1vw 0 1vw 0;
+    width: 75%; 
+}
+
+.add-links {
+    transition: $transition-linear;
+    display: none;
+}
+
+.add-links.display {
+    display: block;
+}
+
+input {
+    width: 50%;
+    padding: 1vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/*input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }*/

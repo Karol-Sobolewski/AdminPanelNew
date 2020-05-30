@@ -1,0 +1,38 @@
+{
+    "linkTable":[
+        {
+            "id": 1,
+            "title": "Home Page",
+            "link": "www.homepage.com"
+        },
+        {
+            "id": 2,
+            "title": "Google",
+            "link": "www.google.com"
+        },
+        {
+            "id": 3,
+            "title": "Facebook",
+            "link": "www.facebook.com"
+        },
+        {
+            "id": 4,
+            "title": "kodilla",
+            "link": "www.kodilla.com"
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "name": "Leonardo",
+            "surname": "DiCaprio",
+            "mail": "a@a.aa",
+            "tel": "+48123456789",
+            "skype": "@Leo",
+            "icq": "@Leo",
+            "msn": "@let",
+            "wallet": "wallet", 
+            "password": "12345"
+        }
+    ]
+}

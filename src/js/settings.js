@@ -1,12 +1,11 @@
 /* global Handlebars */
 export const select = {
     templateOf: {
-        menuProduct: '#template-menu-product',
-        cartProduct: '#template-cart-product',
-        bookingWidget: '#template-booking-widget',
+      linkTable: '#template-link-table',
       },
       containerOf: {
         pages: '#pages',
+        linkTable: '#linkTable',
       },
       nav:{
           links: '.menu__link',
@@ -14,19 +13,8 @@ export const select = {
 };
 
 export const classNames = {
-    menuProduct: {
-      wrapperActive: 'active',
-      imageVisible: 'active',
-    },
-    cart: {
-      wrapperActive: 'active',
-    },
-    // CODE ADDED START
-    booking: {
-      loading: 'loading',
-      tableBooked: 'booked',
-      tableSelected: 'selected',
-      //tableBookedSvr: 'bookedSvr',
+    btn: {
+      buttonAdd: 'btn--add',
     },
     nav: {
       active: 'active',
@@ -35,8 +23,15 @@ export const classNames = {
       active: 'active',
     },
 };
-/*export const templates = {
-    menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
-    cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-    bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML), // CODE ADDED
-  };*/
+
+export const settings = {
+  db: {
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
+    linkTable:'linkTable',
+  }
+};
+
+export const templates = {
+    linkTable: Handlebars.compile(document.querySelector(select.templateOf.linkTable).innerHTML),
+    
+};

@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex: 1;
+    height: 5vw;
     width: 100%;
     border-bottom: 2px solid $medium-color;
     
@@ -15,10 +15,16 @@
 }
 
 .card__wrapper { 
-    @include flex(column, center, space-around);
-    flex: 11;
+    @include flex(column, center, center);
+    flex: auto;
     overflow: hidden;
     width: 100%;
     border-radius: 2px;
     padding: 1rem;
+}
+
+@media (max-height: 667px) {
+    .card__header {
+        height: 10vw;
+    }
 }

@@ -18,9 +18,6 @@
     cursor: pointer;
     &:hover{
         box-shadow: $box-shadow;
-        .header__icon {
-            color: $main-color;
-        }
     }
     &--wide{
         flex: 0 0 15rem;

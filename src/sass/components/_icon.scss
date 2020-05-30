@@ -1,3 +1,10 @@
 .icon{
     transition: $transition-linear;
+    cursor: pointer;
+    &--link{
+        cursor: pointer;
+        &:hover{
+        color: $main-color;
+        }
+    }
 }
