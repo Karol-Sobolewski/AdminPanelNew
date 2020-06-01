@@ -9,6 +9,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/components/sorttable.js" type="text/javascript"></script>
 </head>
 <body>
   <header class="header__container">
@@ -94,13 +95,6 @@
         </li>
   </nav>
   <div id="pages">
-    <script id="template-link-table" type="text/x-handlebars-template">
-      <div class="tr">
-        <div class="td link-table__title">{{ title }}</div>
-        <div class="td"> <a class="link" href={{link}}>{{link}}</a></div>
-        <div class="td"><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></div>                
-      </div>
-    </script>
     <section id="general">
       <div class="page__container">
         <div class="page__card__container">
@@ -151,7 +145,7 @@
           <span>Links</span>
         </div>
         <div class="card__wrapper">
-          <button class="btn">+ add new</button>
+          <button class="btn btn__add--link">+ add new</button>
           <div class="scroll-wrapper">
               <table id="linkTable" class="linkTable">
               </table>
@@ -163,7 +157,7 @@
               </tr>
             </table>-->
           </div>
-          <button class="btn">+ add new</button>
+          <button class="btn btn__add--link">+ add new</button>
         </div>
       </div>
     </section>
@@ -174,11 +168,75 @@
             <span>Details</span>
           </div>
           <div class="card__wrapper">
+            <div class="scroll-wrapper">
+              <table class="sortable">
+                <tr>
+                  <th>Tracker name</th>
+                  <th>Initialted date</th>
+                  <th>Visits</th>
+                  <th>Unique</th>
+                  <th>Signups</th>
+                  <th>FTD</th>
+                  <th>Depositors</th>
+                  <th>Deposits ($)</th>
+                  <th>Payout ($)</th>
+                  <th>Turnover</th>
+                  <th>Deal</th>
+                </tr>
+                <tr>
+                  <td>aff/sam_test</td>
+                  <td>17/08/02 (12:58)</td>
+                  <td>232</td>
+                  <td>114</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>3</td>
+                  <td>34,425.00</td>
+                  <td>234.00</td>
+                  <td>421,342.00</td>
+                  <td>cpl (200)</td>
+                </tr>
+                <tr>
+                  <td>aff/sam_test</td>
+                  <td>17/08/02 (12:58)</td>
+                  <td>232</td>
+                  <td>114</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>3</td>
+                  <td>34,425.00</td>
+                  <td>236.00</td>
+                  <td>421,342.00</td>
+                  <td>cpl (200)</td>
+                </tr>
+                <tr>
+                  <td>aff/sam_test</td>
+                  <td>17/08/02 (12:58)</td>
+                  <td>232</td>
+                  <td>114</td>
+                  <td>12</td>
+                  <td>6</td>
+                  <td>3</td>
+                  <td>34,425.00</td>
+                  <td>235.00</td>
+                  <td>421,342.00</td>
+                  <td>cpl (200)</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="links">
+      <script id="template-link-table" type="text/x-handlebars-template">
+        <div class="tr">
+          <div class="td link-table__title">{{ title }}</div>
+          <div class="td"> <a class="link" href={{link}}>{{link}}</a></div>
+          <div class="td"><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></div>                
+        </div>
+
+      </script>
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
@@ -186,27 +244,45 @@
           </div>
           <div class="card__wrapper">
             <div class="scroll-wrapper">
-              <table id="linkTable" class="linkTable">
-              </table>
-            <!--<table>
+              <!--<table id="linkTable" class="linkTable">
+              </table>-->
+            <table class="linkTable">
               <tr>
                 <td>Home page</td>
-                <td class="link">http:/www.homepage.com</td>
+                <td><a class="link" href="http://www.homepage.com">http://www.homepage.com</a></td>
                 <td><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></td>
               </tr>
-            </table>-->
+            </table>
           </div>
           </div>
         </div>
       </div>    
     </section>
     <section id="banners">
+      <script id="template-banner-table" type="text/x-handlebars-template">
+        <div class="tr">
+          <div class="td link-table__title">{{ title }}</div>
+          <div class="td"> <a class="link" href={{link}}>{{link}}</a></div>
+          <div class="td"><div class="table__icons"><i class="icon--link icon-links"></i><i class="icon--link icon-trash"></i></div></div>                
+        </div>
+      </script>
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
             <span>Banners</span>
           </div>
           <div class="card__wrapper">
+            <button class="btn btn__add--links">+ add new</button>
+            <div class="scroll-wrapper">
+              <form class="add-links">
+                <input type="text" name="link-name"required>
+                <input type="text" name="link-url"required>
+                <button type="submit" class="btn">Save</button>
+              </form>
+              <table id="bannerTable" class="bannerTable">
+              </table>
+            </div>
+            <button class="btn .btn__add--links">+ add new</button>
           </div>
         </div>
       </div>
@@ -219,10 +295,10 @@
           </div>
           <div class="card__wrapper card__wrapper--form">
             <div class="scroll-wrapper">
-              <form action="" method="POST">
+              <form action="https://formspree.io/xyynerqy" method="POST">
                 <div class="field">
                   <label>Name</label>
-                  <input type="text" name="user-name" required>
+                  <input type="text" name="user-name"required>
                 </div>
                 <div class="field">
                   <label>Surname</label>

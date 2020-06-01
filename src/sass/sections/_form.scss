@@ -6,29 +6,37 @@
 
 form {
     @include flex(column, center, space-around);
-    padding: 1vw;
-    width: 100%;
+    //padding: 1vw;
+    width: 99%;
 }
 
 .field {
     @include flex(row, center, space-around);
     //border: 2px red solid;
-    margin: 1vw 0 1vw 0;
+    margin: 0.75vw 0 0.75vw 0;
     width: 75%; 
 }
 
 .add-links {
+    @include flex(row, center, space-around);
+    width: 75%;
     transition: $transition-linear;
     display: none;
+    input {
+        width: 25%;
+    }
+    .btn {
+        margin: 1vw;
+    }
 }
 
 .add-links.display {
-    display: block;
+    display: flex;
 }
 
 input {
     width: 50%;
-    padding: 1vw;
+    padding: 0.5vh;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;

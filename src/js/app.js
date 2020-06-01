@@ -1,7 +1,7 @@
-
-import {select, classNames, templates, settings} from "./settings.js";
+import {settings, select, classNames} from './settings.js';
 import utils from "./utils.js";
-
+import Links from './components/Links.js';
+import Banners from './components/Banners.js';
 
   const app = {
     initPages: function(){
@@ -69,7 +69,7 @@ import utils from "./utils.js";
     },
 
     toggleLink: function (){
-      const addlink = document.querySelector('.btn--add');
+      const addlink = document.querySelector('.btn__add--links');
       const form = document.querySelector('.add-links');
 
         addlink.addEventListener('click', function(){
@@ -83,14 +83,16 @@ import utils from "./utils.js";
       const thisApp = this;
       for(let linkData in thisApp.data.linkTable){
 
-        const link = thisApp.data.linkTable[linkData];
-        const generateHTML = templates.linkTable(link);
+        new Links(thisApp.data.linkTable[linkData]);
+      }    
+    },
 
-        thisApp.linkTable = utils.createDOMFromHTML(generateHTML);
 
-        const linkTableContainer = document.querySelector(select.containerOf.linkTable);
+    initbannerTable(){
+      const thisApp = this;
+      for(let bannerData in thisApp.data.bannerTable){
 
-        linkTableContainer.appendChild(thisApp.linkTable);
+        new Banners(thisApp.data.bannerTable[bannerData]);
       }    
     },
 
@@ -99,22 +101,34 @@ import utils from "./utils.js";
       thisApp.data = {};
       const urls = {
         linkTable: settings.db.url + '/' + settings.db.linkTable,
+        bannerTable: settings.db.url + '/' + settings.db.bannerTable,
       };
-      fetch(urls.linkTable)
-        .then(rawResponse => rawResponse.json())
-        .then(parsedResponse => {
-          thisApp.data.linkTable = parsedResponse;
-          thisApp.initLinkTable();
-          console.log(parsedResponse)
-        });
-      //console.log(urls)
+      Promise.all([
+        fetch(urls.linkTable),
+        fetch(urls.bannerTable),
+      ])
+      .then(function(allResponses){
+        const linksResponse = allResponses[0];
+        const bannersResponse = allResponses[1];
+        return  Promise.all([
+          linksResponse.json(),
+          bannersResponse.json(),
+        ]);
+      })
+      .then(function([linkTable, bannerTable]){
+        thisApp.data.linkTable = linkTable;
+        thisApp.data.bannerTable = bannerTable;
+
+        thisApp.initLinkTable();
+        thisApp.initbannerTable();
+      });
     },
 
     init: function(){
         const thisApp = this;
         thisApp.initPages();
         thisApp.toggleSideBar();
-     //   thisApp.toggleLink();
+        thisApp.toggleLink();
         thisApp.getData();
     },
   };

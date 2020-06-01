@@ -21,6 +21,18 @@
             "link": "www.kodilla.com"
         }
     ],
+    "bannerTable": [
+        {
+            "id": 1,
+            "title": "kodilla",
+            "link": "www.kodilla.com"
+        },
+        {
+            "id": 2,
+            "title": "Facebook",
+            "link": "www.facebook.com"
+        }
+    ],
     "user": [
         {
             "id": 1,
