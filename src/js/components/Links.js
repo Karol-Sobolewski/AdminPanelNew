@@ -13,12 +13,12 @@ class Links{
         const thisLinks = this;
         const generateHTML = templates.linkTable(thisLinks.data);
 
-        thisLinks.links = utils.createDOMFromHTML(generateHTML);
+        thisLinks.links = utils.createDOMFromHTML(generateHTML, 'tr');
     
-        const linkContainer = document.querySelector(select.containerOf.linkTable);
-    
-        linkContainer.appendChild(thisLinks.links);
-
+        const linkContainers = document.querySelectorAll(select.containerOf.linkTable);
+        for(let container of linkContainers) {
+            container.appendChild(thisLinks.links.cloneNode(true));
+        }
 
     }
 }

@@ -48,7 +48,7 @@ hr {
 }
 
  .page__container {
-    @include flex(column, center, center);
+    @include flex(column, center, flex-start);
     padding-top: 5rem;
     width: 100%;
     min-height: 100vh;
@@ -78,7 +78,7 @@ hr {
         padding-top: 0; 
     }
     .page__card__container {
-    width: 75%;
-    height: 25rem;
+    width: 80%;
+    height: auto;
     }
 }    

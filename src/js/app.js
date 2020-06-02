@@ -68,15 +68,7 @@ import Banners from './components/Banners.js';
         })
     },
 
-    toggleLink: function (){
-      const addlink = document.querySelector('.btn__add--links');
-      const form = document.querySelector('.add-links');
-
-        addlink.addEventListener('click', function(){
-            console.log('add');
-            form.classList.toggle('display');
-        })
-    },
+    
 
     initLinkTable(){
       //console.log("hey");
@@ -85,6 +77,58 @@ import Banners from './components/Banners.js';
 
         new Links(thisApp.data.linkTable[linkData]);
       }    
+      
+     // const table = document.querySelectorAll('table tbody');
+      //console.log(table);
+      const th = document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+        const dataname = th.dataset;
+        
+        const table = document.getElementById("detailsTable");
+        //console.log(table);
+        //table.sort();
+        //console.log(dataname);
+        
+        })));
+      
+      /*function compare(a, b) {
+                
+       const th = document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+          console.log('click');
+          })));
+          
+        if (a < b)
+           return -1
+        if (a > b)
+           return 1
+        return 0
+
+     }
+   compare();*/
+
+   const stringArray = new Array("Blue","Humpback","Beluga")
+   const numericStringArray = new Array("80","9","700")
+   const numberArray = new Array(40,1,5,200)
+   const mixedNumericArray = new Array("80","9","700",40,1,5,200)
+   
+   function compareNumbers(a, b) {
+      return a - b
+   }
+   
+   /*console.log("tablicaNapisów: " + stringArray.join())
+   console.log("Posortowana: " + stringArray.sort())
+   
+   console.log("tablicaLiczbowa: " + numberArray.join())
+   console.log("Posortowana bez funkcji porównującej: " + numberArray.sort())
+   console.log("Posortowana z funkcją porównującą: " + numberArray.sort(compareNumbers))
+   
+   console.log("tablicaNapisówLiczbowych: " + numericStringArray.join())
+   console.log("Posortowana bez funkcji porównującej: " + numericStringArray.sort())
+   console.log("Posortowana z funkcją porównującą: " + numericStringArray.sort(compareNumbers))
+   
+   console.log("tablicaLiczbowaMieszna: " + mixedNumericArray.join())
+   console.log("Posortowana bez funkcji porównującej: " + mixedNumericArray.sort())
+   console.log("Posortowana z funkcją porównującą: " + mixedNumericArray.sort(compareNumbers))*/
+
     },
 
 
@@ -128,7 +172,6 @@ import Banners from './components/Banners.js';
         const thisApp = this;
         thisApp.initPages();
         thisApp.toggleSideBar();
-        thisApp.toggleLink();
         thisApp.getData();
     },
   };
