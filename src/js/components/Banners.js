@@ -22,12 +22,22 @@ class Banners{
         bannerContainer.appendChild(thisBanners.banners);
     }
 
+    openModal(modal) {
+        document.querySelectorAll('#overlay > *').forEach(function(modal) {
+          modal.classList.remove('show')
+        })
+        document.querySelector('#overlay').classList.add('show')
+        document.querySelector(modal).classList.add('show')
+      }
+
     toggleLink(){
+        const thisBanners = this;
         const addlinks = document.querySelectorAll('.btn__add--links');
         const form = document.querySelector('.add-links');
+        
         //console.log(addlinks)
         addlinks.forEach(element => element.addEventListener('click', function(){
-            form.classList.add('display');
+            thisBanners.openModal('#myModal');
         }));
         /*for(const addlink of addlinks){
             console.log('xd', addlink)  

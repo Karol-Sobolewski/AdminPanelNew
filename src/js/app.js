@@ -68,8 +68,6 @@ import Banners from './components/Banners.js';
         })
     },
 
-    
-
     initLinkTable(){
       //console.log("hey");
       const thisApp = this;
@@ -77,11 +75,19 @@ import Banners from './components/Banners.js';
 
         new Links(thisApp.data.linkTable[linkData]);
       }    
+      const thead =  document.querySelector('thead')
       
-     // const table = document.querySelectorAll('table tbody');
-      //console.log(table);
-      const th = document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
+      thead.addEventListener('click', function(){
+        if(event.target.tagName === 'TH'){
+          const dataset = event.target.dataset;
+          thisApp.sortTable(dataset);
+          
+          console.log(table)
+        }
+      })
+      /*const th = document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
         const dataname = th.dataset;
+        thisApp.sortTable(dataname)
         
         const table = document.getElementById("detailsTable");
         //console.log(table);
@@ -89,48 +95,18 @@ import Banners from './components/Banners.js';
         //console.log(dataname);
         
         })));
-      
-      /*function compare(a, b) {
-                
-       const th = document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-          console.log('click');
-          })));
-          
-        if (a < b)
-           return -1
-        if (a > b)
-           return 1
-        return 0
-
-     }
-   compare();*/
-
-   const stringArray = new Array("Blue","Humpback","Beluga")
-   const numericStringArray = new Array("80","9","700")
-   const numberArray = new Array(40,1,5,200)
-   const mixedNumericArray = new Array("80","9","700",40,1,5,200)
-   
-   function compareNumbers(a, b) {
-      return a - b
-   }
-   
-   /*console.log("tablicaNapisów: " + stringArray.join())
-   console.log("Posortowana: " + stringArray.sort())
-   
-   console.log("tablicaLiczbowa: " + numberArray.join())
-   console.log("Posortowana bez funkcji porównującej: " + numberArray.sort())
-   console.log("Posortowana z funkcją porównującą: " + numberArray.sort(compareNumbers))
-   
-   console.log("tablicaNapisówLiczbowych: " + numericStringArray.join())
-   console.log("Posortowana bez funkcji porównującej: " + numericStringArray.sort())
-   console.log("Posortowana z funkcją porównującą: " + numericStringArray.sort(compareNumbers))
-   
-   console.log("tablicaLiczbowaMieszna: " + mixedNumericArray.join())
-   console.log("Posortowana bez funkcji porównującej: " + mixedNumericArray.sort())
-   console.log("Posortowana z funkcją porównującą: " + mixedNumericArray.sort(compareNumbers))*/
+*/
 
     },
-
+    
+    sortTable(a, b, dataset){
+      console.log('data', dataset);
+      /*if (a[dataset] < b[dataset])
+      return -1
+      if (a[dataset] > b[dataset])
+      return 1
+      return 0*/
+    },
 
     initbannerTable(){
       const thisApp = this;
@@ -168,11 +144,45 @@ import Banners from './components/Banners.js';
       });
     },
 
+    initModal() {
+      function closeModal() {
+        document.getElementById('overlay').classList.remove('show')
+      }
+    
+      document.querySelectorAll('#overlay .js--close-modal').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault()
+          closeModal()
+        })
+      })
+    
+      document.querySelector('#overlay').addEventListener('click', function(e) {
+        if(e.target === this) {
+          closeModal()
+        }
+      })
+    
+      document.addEventListener('keyup', function(e) {
+        if(e.keyCode === 27) {
+          closeModal()
+        }
+      })
+    },
+
+    openModal(modal) {
+      document.querySelectorAll('#overlay > *').forEach(function(modal) {
+        modal.classList.remove('show')
+      })
+      document.querySelector('#overlay').classList.add('show')
+      document.querySelector(modal).classList.add('show')
+    },
+
     init: function(){
         const thisApp = this;
         thisApp.initPages();
         thisApp.toggleSideBar();
         thisApp.getData();
+        thisApp.initModal();
     },
   };
   
