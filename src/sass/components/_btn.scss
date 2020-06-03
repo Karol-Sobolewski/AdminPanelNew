@@ -1,19 +1,20 @@
 .btn {
     @include flex(row, center, center);
+    width: auto;
+    //height: 3vh;
     overflow: hidden;
-    margin: 2vw;
     border: none;
     transition: $transition-linear;
+    margin: 1vw;
     border-radius: 5px;
-    width: auto;
-    height: auto;
-    padding: 1vw;
+    padding: 1vh;
     background-color: $main-color;
     cursor: pointer;
     color: $light-color;
 
     &--secondary{
         background-color: $secondary-color;
+        
     }
     &:hover{
         transform: scale(1.05);

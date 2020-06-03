@@ -1,8 +1,6 @@
 
 .card__header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include flex(row, center, flex-start);
     height: 5vw;
     width: 100%;
     border-bottom: 2px solid $medium-color;

@@ -16,7 +16,7 @@
   align-items: center;
 
   overflow: auto;
-  padding: 30px;
+ //padding: 30px;
 
   display: none;
 }
@@ -30,22 +30,83 @@
 }
 
 .modal {
-  max-width: 600px;
-  margin: auto;
-  background-color: #ffffff;
+  @include flex(column, center, space-around);
   position: relative;
-  padding: 30px;
+  margin: 2rem 1rem 2rem 4rem;
+  width: 75%;
+  background-color: #ffffff;
   display: none;
 }
 
 .modal.show {
-  display: block;
+  display: flex;
 }
 
 .modal .btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.modal__header{
+  h1 {
+    padding: 5px 10px;
+  }
+  @include flex(row, center, space-between);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid $medium-color;
+}
+
+.modal__menu {
+  @include flex(row, flex-end, space-around);
+  width: 100%;
+  border-bottom: 1px solid $medium-color;
+  input{
+    width: 100%;
+  }
+}
+
+.modal__content {
+  width: 90%;
+  border-bottom: 1px solid $medium-color;
+}
+
+.modal__footer {
+  @include flex(row, center, space-around);
+  width: 100%;
+}
+
+.field__modal{
+  @include flex(column, start, flex-end);
+  label {
+    padding: 1vh 0 1vh 0;
+  }
+  &--wide{
+    width: 40%;
+  }
+}
+
+.generated-link {
+    //margin-left: 0.5vw;
+    flex: 8 0 0;
+}
+
+.link__modal__buttons {
+  @include flex(row, center, center);
+  margin-left: 0.5vw;
+  .btn {
+    margin: 0.5vw;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .generated-link {
+      padding-left: 1vw;
+      //width: 50%;
+  }
+
 }
