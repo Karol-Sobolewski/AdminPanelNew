@@ -1,5 +1,5 @@
 {
-    "linkTable":[
+    "linkTable": [
         {
             "id": 1,
             "title": "Home Page",
@@ -33,6 +33,50 @@
             "link": "www.facebook.com"
         }
     ],
+    "detailsTable": [
+        {
+            "id": 1,
+            "tracker": "aff/sam_test",
+            "date": "17:08:02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": 13525.00,
+            "payout": 23400,
+            "turnover": 421342.00,
+            "deal": "cpl(200)"
+        },
+        {
+            "id": 2,
+            "tracker": "aff/sam_test",
+            "date": "17:08:02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": 13625.00,
+            "payout": 23600,
+            "turnover": 421341.00,
+            "deal": "cpl(200)"
+        },
+        {
+            "id": 3,
+            "tracker": "aff/sam_test",
+            "date": "17:08:02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": 13425.00,
+            "payout": 23500,
+            "turnover": 421342.00,
+            "deal": "cpl(200)"
+        }
+    ],
     "user": [
         {
             "id": 1,
@@ -43,7 +87,7 @@
             "skype": "@Leo",
             "icq": "@Leo",
             "msn": "@let",
-            "wallet": "wallet", 
+            "wallet": "wallet",
             "password": "12345"
         }
     ]

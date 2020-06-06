@@ -78,10 +78,19 @@ hr {
     margin: 2rem 1rem 2rem 4rem;
     width: 75%;
     padding: 0rem 0 1rem 0;
-    height: 60rem;
+    //height: 60rem;
     background-color: $light-color;
     box-shadow: $box-shadow;
 }
+
+.scroll-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 90%;
+    overflow-x: auto;
+  }
 
 @media (max-width: 767px) {
     .page__container {
