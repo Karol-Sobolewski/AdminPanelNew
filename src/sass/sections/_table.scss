@@ -1,49 +1,48 @@
-
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    max-height: 100%; 
-  }
-
-  th {
-    cursor: pointer;
-    &:hover{
-        background-color: $medium-color;
-    }
-  }
-
-  td, th {
-    text-align: left;
-    padding: 1vw;
-  }
-
-  tr {
-    border: 1px solid $medium-color; border-width: 1px 0 1px 0;
-  }
-
-tbody{
-    tr:hover {
-        background: $medium-color;
-        .table__icons{
-            visibility: visible;
-        }
-  }
-}
- 
-  
-.linkTable, .bannerTable{
-    
-    width: 40%;
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-height: 100%;
 }
 
-.table__icons{
-    @include flex(row, center, space-around);
-    visibility: hidden;
-    i{
-        margin: 0;
-        padding: 0;
+th {
+  cursor: pointer;
+  &:hover {
+    background-color: $medium-color;
+  }
+}
+
+td,
+th {
+  text-align: left;
+  padding: 1vw;
+}
+
+tr {
+  border: 1px solid $medium-color;
+  border-width: 1px 0 1px 0;
+}
+
+tbody {
+  tr:hover {
+    background: $medium-color;
+    .table__icons {
+      visibility: visible;
     }
+  }
+}
+
+.linkTable,
+.bannerTable {
+  width: 40%;
+}
+
+.table__icons {
+  @include flex(row, center, space-around);
+  visibility: hidden;
+  i {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /*.tr {

@@ -1,78 +1,87 @@
 .card__wrapper--form {
-   // @include flex(column, center, space-around);
-    padding: 1vw;
-    //margin-top: 2vw;
+  // @include flex(column, center, space-around);
+  padding: 1vw;
+  //margin-top: 2vw;
 }
 
 form {
-    @include flex(column, center, space-between);
-    //padding: 1vw;
-    width: 99%;
+  @include flex(column, center, space-between);
+  //padding: 1vw;
+  width: 99%;
 }
 
-input, select {
-    width: 50%;
-    height: 4vh;
-    padding: 0.5vh;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+input,
+select {
+  width: 50%;
+  height: 4vh;
+  padding: 0.5vh;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 select {
-    width: 100%;
-} 
+  width: 100%;
+}
 
-.fa-check{
-    visibility: hidden;
-    position: absolute;
-    top: 50%;
-    bottom: auto;
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -50%);
-    font-size: 0.5rem;
-    line-height: 6px;
-    color: #fff;
+.fa-check {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%);
+  font-size: 0.5rem;
+  line-height: 6px;
+  color: #fff;
 }
 
 .label--checkbox {
-    @include flex(row, center, flex-start);
-    width: 60%;
-    span{
-        padding-left: 1vw;
-    }
-    input[type="checkbox"] {    
-      position: absolute;
-      margin: 0;
-      width: 1rem;
-      height: 1rem;
-      //opacity: 0;
+  @include flex(row, center, flex-start);
+  width: 60%;
 
-      + .icon {
-        display: inline-block;
-        position: relative;
-        width: 1rem;
-        height: 1rem;
-        ;
-        }
-  
-      &:checked + .icon {
-        background-color: $success-color;
-        .fa-check{
-            visibility: visible;
-        }
+  span {
+    padding-left: 1vw;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    margin: 0;
+    width: 2vw;
+    height: 2vw;
+    opacity: 0;
+    &::before {
+      opacity: 1;
+      border: 1px solid #ccc;
+      width: 2vw;
+      height: 2vw;
+    }
+    //border: 1px solid #ccc;
+    + .icon {
+      display: inline-block;
+      position: relative;
+      width: 2vw;
+      height: 2vw;
+      border: 1px solid #ccc;
+    }
+
+    &:checked + .icon {
+      //width: 100%;
+      background-color: $success-color;
+      .fa-check {
+        visibility: visible;
       }
     }
   }
+}
 
 .field {
-    @include flex(row, center, space-around);
-    //border: 2px red solid;
-    //margin: 1vh 0 1vh 0;
-    padding: 1vh 0 1vh 0;
-    width: 90%;
-    &--checkbox:hover{
-        background-color: $medium-color;
-    } 
+  @include flex(row, center, space-around);
+  //border: 2px red solid;
+  //margin: 1vh 0 1vh 0;
+  padding: 1vh 0 1vh 0;
+  width: 90%;
+  &--checkbox:hover {
+    background-color: $medium-color;
+  }
 }

@@ -198,6 +198,7 @@ const app = {
 
   initChart(){
     const ctx = document.getElementById(`myChart`).getContext(`2d`);
+    /*eslint-disable*/
     const chart = new Chart(ctx, {
       // 1
       type: `bar`,
