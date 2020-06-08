@@ -1,9 +1,9 @@
 import { settings, select, classNames } from './settings.js';
-// import utils from './utils.js';
 import Links from './components/Links.js';
 import Banners from './components/Banners.js';
 import Details from './components/Details.js';
 import PersonalData from './components/Personal-Data.js';
+import Table from './components/Table.js';
 
 const app = {
 
@@ -29,18 +29,14 @@ const app = {
         thisApp.data.linkTable = linkTable;
         thisApp.data.bannerTable = bannerTable;
         thisApp.data.detailsTable = detailsTable;
-        thisApp.data.personalData = personalData;
-        console.log(personalData);
+        thisApp.data.personalData = personalData;        
         
-
-        thisApp.initLinkTable();
-        thisApp.initbannerTable();
-        thisApp.initdetailsTable();
+        thisApp.initTables();
         thisApp.initpersonalDataForm();
       });
   },
 
-  initPages: function () {
+  initPages() {
     const thisApp = this;
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
@@ -78,7 +74,7 @@ const app = {
     }
   },
 
-  activatePage: function (pageId) {
+  activatePage(pageId) {
     const thisApp = this;
 
     /* add class 'active' to matching pages, remove from non-matchig */
@@ -95,7 +91,7 @@ const app = {
     }
   },
 
-  toggleSideBar: function () {
+  toggleSideBar() {
     const hamburger = document.querySelector(`.hamburger`);
     const sidebar = document.querySelector(`.nav__container`);
 
@@ -104,11 +100,22 @@ const app = {
     });
   },
 
-  initLinkTable() {
+  initTables(){
     const thisApp = this;
-    for (const linkData in thisApp.data.linkTable) {
-      new Links(thisApp.data.linkTable[linkData]);
+    const values = Object.values(thisApp.data);
+    values.splice(-1, 1);
+    new Table(values);
+    
+    /*for (const linkData in linkDatas) {
+      new Links(linkDatas[linkData]);
+      console.log(`Links`, thisApp.data.linkTable[linkData]);
     }
+    for (const detailsData in thisApp.data.detailsTable) {
+      new Details(thisApp.data.detailsTable[detailsData]);
+    }
+    for (const bannerData in thisApp.data.bannerTable) {
+      new Banners(thisApp.data.bannerTable[bannerData]);
+    }*/
   },
 
   sortTable(table, sortColumn) {
@@ -146,18 +153,8 @@ const app = {
     });
   },
 
-  initbannerTable() {
-    const thisApp = this;
-    for (const bannerData in thisApp.data.bannerTable) {
-      new Banners(thisApp.data.bannerTable[bannerData]);
-    }
-  },
-
   initdetailsTable() {
-    const thisApp = this;
-    for (const detailsData in thisApp.data.detailsTable) {
-      new Details(thisApp.data.detailsTable[detailsData]);
-    }
+    
     const table = document.querySelector(`.sortable`);
 
     const thead = table.querySelector(`thead`);
@@ -170,7 +167,7 @@ const app = {
     });
   },
 
-  initpersonalDataForm(){
+  initpersonalDataForm() {
     const thisApp = this;
     for (const personalData in thisApp.data.personalData) {
       new PersonalData(thisApp.data.personalData[personalData]);
@@ -212,7 +209,7 @@ const app = {
     document.querySelector(modal).classList.add(`show`);
   },
 
-  initChart(){
+  initChart() {
     const ctx = document.getElementById(`myChart`).getContext(`2d`);
     /*eslint-disable*/
     const chart = new Chart(ctx, {

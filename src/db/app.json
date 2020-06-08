@@ -3,78 +3,78 @@
         {
             "id": 1,
             "title": "Home Page",
-            "link": "www.homepage.com"
+            "link": "https://www.homepage.com"
         },
         {
             "id": 2,
             "title": "Google",
-            "link": "www.google.com"
+            "link": "https://www.google.com"
         },
         {
             "id": 3,
             "title": "Facebook",
-            "link": "www.facebook.com"
+            "link": "<a class='link'>https://www.facebook.com</a>"
         },
         {
             "id": 4,
             "title": "kodilla",
-            "link": "www.kodilla.com"
+            "link": "https://www.kodilla.com"
         }
     ],
     "bannerTable": [
         {
             "id": 1,
             "title": "kodilla",
-            "link": "www.kodilla.com"
+            "link": "https://www.kodilla.com"
         },
         {
             "id": 2,
             "title": "Facebook",
-            "link": "www.facebook.com"
+            "link": "https://www.facebook.com"
         }
     ],
     "detailsTable": [
         {
             "id": 1,
-            "tracker": "aff/sam_test",
-            "date": "17:08:02 (12:58)",
-            "visits": 232,
-            "unique": 114,
-            "signups": 12,
-            "ftd": 6,
-            "depositors": 3,
-            "deposits": 13525.00,
-            "payout": 23400,
-            "turnover": 421342.00,
-            "deal": "cpl(200)"
+            "Tracker name": "aff/sam_test",
+            "Initialted date": "17:08:02 (12:58)",
+            "Visits": 232,
+            "Unique": 114,
+            "Signups": 12,
+            "FTD": 6,
+            "Depositors": 3,
+            "Deposits ($)": 13525.00,
+            "Payout ($)": 23400,
+            "Turnover": 421342.00,
+            "Deal": "cpl(200)"
         },
         {
             "id": 2,
-            "tracker": "aff/sam_test",
-            "date": "17:08:02 (12:58)",
-            "visits": 232,
-            "unique": 114,
-            "signups": 12,
-            "ftd": 6,
-            "depositors": 3,
-            "deposits": 13625.00,
-            "payout": 23600,
-            "turnover": 421341.00,
-            "deal": "cpl(200)"
+            "Tracker name": "aff/sam_test",
+            "Initialted date": "17:08:02 (12:58)",
+            "Visits": 232,
+            "Unique": 114,
+            "Signups": 12,
+            "FTD": 5,
+            "Depositors": 3,
+            "Deposits ($)": 13625.00,
+            "Payout ($)": 23600,
+            "Turnover": 421341.00,
+            "Deal": "cpl(200)"
         },
         {
             "id": 3,
-            "tracker": "aff/sam_test",
-            "date": "17:08:02 (12:58)",
-            "visits": 232,
-            "unique": 114,
-            "signups": 12,
-            "ftd": 6,
-            "depositors": 3,
-            "deposits": 13425.00,
-            "payout": 23500,
-            "turnover": 421342.00,
-            "deal": "cpl(200)"
+            "Tracker name": "aff/sam_test",
+            "Initialted date": "17:08:02 (12:58)",
+            "Visits": 232,
+            "Unique": 114,
+            "Signups": 12,
+            "FTD": 6,
+            "Depositors": 3,
+            "Deposits ($)": 13425.01,
+            "Payout ($)": 23500,
+            "Turnover": 421342.00,
+            "Deal": "cpl(200)"
         }
     ],
     "personalData": [

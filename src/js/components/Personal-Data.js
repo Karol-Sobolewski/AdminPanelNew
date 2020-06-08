@@ -15,11 +15,11 @@ class PersonalData {
 
     thisPersonalData.personalData = utils.createDOMFromHTML(generateHTML, `div`, `form__wrapper--personal-data`);
 
-    const bannerContainer = document.querySelector(
+    const personalDataContainer = document.querySelector(
       select.containerOf.personalData
     );
 
-    bannerContainer.appendChild(thisPersonalData.personalData);
+    personalDataContainer.appendChild(thisPersonalData.personalData);
   }
 
 }
