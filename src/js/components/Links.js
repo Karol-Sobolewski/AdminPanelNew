@@ -13,7 +13,7 @@ class Links {
 
   getElements() {
     const thisLinks = this;
-    const data = thisLinks.dom = {};
+    thisLinks.dom = {};
     thisLinks.form = document.querySelector(`.form__addLink`);
     thisLinks.formInputs = thisLinks.form.querySelectorAll(`input, select`);
 
