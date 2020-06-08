@@ -39,7 +39,7 @@ select {
 
 .label--checkbox {
   @include flex(row, center, flex-start);
-  width: 60%;
+  //width: 60%;
 
   span {
     padding-left: 1vw;
@@ -47,26 +47,24 @@ select {
   input[type="checkbox"] {
     position: absolute;
     margin: 0;
-    width: 2vw;
-    height: 2vw;
+    width: 2vh;
+    height: 2vh;
     opacity: 0;
     &::before {
       opacity: 1;
       border: 1px solid #ccc;
-      width: 2vw;
-      height: 2vw;
+      width: 2vh;
+      height: 2vh;
     }
-    //border: 1px solid #ccc;
     + .icon {
       display: inline-block;
       position: relative;
-      width: 2vw;
-      height: 2vw;
+      width: 2vh;
+      height: 2vh;
       border: 1px solid #ccc;
     }
 
     &:checked + .icon {
-      //width: 100%;
       background-color: $success-color;
       .fa-check {
         visibility: visible;
@@ -75,13 +73,28 @@ select {
   }
 }
 
+//personal Data
+.personal-data {
+  .row{
+    @include flex(row, center, center);
+    width: 100%;
+  }
+}
+
+.form__container--personal-data{
+  width: 100%;
+}
+
 .field {
   @include flex(row, center, space-around);
-  //border: 2px red solid;
-  //margin: 1vh 0 1vh 0;
   padding: 1vh 0 1vh 0;
-  width: 90%;
-  &--checkbox:hover {
-    background-color: $medium-color;
+  width: 100%;
+  &--checkbox {
+    @include flex(row, center, space-between);
+    width: 90%;
+    &:hover {
+    
+      background-color: $medium-color;
+    }
   }
 }

@@ -4,12 +4,14 @@ export const select = {
     linkTable: `#template-link-table`,
     bannerTable: `#template-banner-table`,
     detailsTable: `#template-details-table`,
+    personalData: `#template-personal-data`,
   },
   containerOf: {
     pages: `#pages`,
     linkTable: `#linkTable`,
     bannerTable: `#bannerTable`,
-    detailsTable: `#detailsTable`
+    detailsTable: `#detailsTable`,
+    personalData: `#personalData`,
   },
   nav:{
     links: `.menu__link`,
@@ -34,6 +36,7 @@ export const settings = {
     linkTable:`linkTable`,
     bannerTable: `bannerTable`,
     detailsTable: `detailsTable`,
+    personalData: `personalData`,
   }
 };
 
@@ -41,4 +44,5 @@ export const templates = {
   linkTable: Handlebars.compile(document.querySelector(select.templateOf.linkTable).innerHTML),
   bannerTable: Handlebars.compile(document.querySelector(select.templateOf.bannerTable).innerHTML),
   detailsTable: Handlebars.compile(document.querySelector(select.templateOf.detailsTable).innerHTML),
+  personalData: Handlebars.compile(document.querySelector(select.templateOf.personalData).innerHTML),
 };

@@ -77,14 +77,14 @@
             "deal": "cpl(200)"
         }
     ],
-    "user": [
+    "personalData": [
         {
             "id": 1,
             "name": "Leonardo",
             "surname": "DiCaprio",
             "mail": "a@a.aa",
             "tel": "+48123456789",
-            "skype": "@Leo",
+            "skype": "",
             "icq": "@Leo",
             "msn": "@let",
             "wallet": "wallet",

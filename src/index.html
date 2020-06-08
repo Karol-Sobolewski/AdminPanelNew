@@ -32,43 +32,43 @@
   </header>
   <nav class="nav__container">
     <div class="nav__wrapper nav__logo">
-      <span class="logo" href="#general">JUST DO IT</span>
+      <h1 class="logo" href="#general">JUST DO IT</h1>
       <i class="hamburger fas fa-bars"></i>
     </div>
     <div class="nav__wrapper nav__menu">
       <ul class="menu__link__wrapper">
         <li class="menu__link" href="#general">
           <i class="icon menu__link__icon icon-general"></i>
-          <span class="menu__link__text">General</span>
+          <h2 class="menu__link__text">General</h2>
         </li>
         <li class="menu__link" href="#details">
           <i class="icon menu__link__icon icon-details"></i>
-          <span class="menu__link__text">Details</span>
+          <h2 class="menu__link__text">Details</j2>
         </li>
         <li class="menu__link" href="#links">
           <i class="icon menu__link__icon icon-links"></i>
-          <span class="menu__link__text">Links</span>
+          <h2 class="menu__link__text">Links</h2>
         </li>
         <li class="menu__link" href="#banners">
           <i class="icon menu__link__icon icon-banners"></i>
-          <span class="menu__link__text">Banners</span>
+          <h2 class="menu__link__text">Banners</h2>
         </li>
         <li class="menu__link" href="#personal-data">
           <i class="icon menu__link__icon icon-personaldata"></i>
-          <span class="menu__link__text">Personal Data</span>
+          <h2 class="menu__link__text">Personal Data</h2>
         </li>
         <li class="menu__link" href="#payout">
           <i class="icon menu__link__icon icon-payout"></i>
-          <span class="menu__link__text">Payout</span>
+          <h2 class="menu__link__text">Payout</h2>
         </li>
         <li class="menu__link" href="#postback">
           <i class="icon menu__link__icon icon-postback"></i>
-          <span class="menu__link__text">Postback</span>
+          <h2 class="menu__link__text">Postback</h2>
         </li>
       </ul>
     </div>
     <div class="nav__wrapper nav__manager">
-      <label class="manager__label">Your Manager</label>
+      <h2 class="manager__label">Your Manager</h2>
       <div class="manager__card">
         <img class="manager__photo" src="images/manager.png"></img>
         <span class="manager__name link">Michael E.</span>
@@ -78,11 +78,11 @@
       <ul class="menu__link__wrapper">
         <li class="menu__link">
           <i class="icon menu__link__icon icon-profile"></i>
-          <span class="link menu__link__text">Leonardo</span>
+          <h2 class="link menu__link__text">Leonardo</h2>
         </li>
         <li class="menu__link">
           <i class="icon menu__link__icon icon-notification"></i>
-          <span class="menu__link__text">Last notification</span>
+          <h2 class="menu__link__text">Last notification</h2>
         </li>
         <li class="menu__link">
           <i class="icon menu__link__icon icon-wallet"></i>
@@ -105,7 +105,7 @@
       <form class="form__addLink">
         <div class="modal__menu row">
           <div class="field__modal field__modal--wide">
-            <label>Scheme name</label>
+            <h2>Scheme name</h2>
             <input type="text" name="scheme-name" placeholder="Name" required>
           </div>
           <div class="field__modal field__modal--wide">
@@ -116,7 +116,7 @@
             </select>
           </div>
           <div class="field__modal">
-            <label>Language</label>
+            <h2>Language</h2>
             <select name="language">
               <option value="en">EN</option>
               <option value="pl">PL</option>
@@ -131,7 +131,7 @@
                 <label class="label--checkbox">
                   <input type="checkbox" name="link" value="monkey" checked>
                   <div class="icon"><i class="fas fa-check"></i></div>
-                  <span>Landing page Monkey</span>
+                  <span>Monkey</span>
                 </label>
                 <i class="link icon--link icon-show"></i>
               </div>
@@ -215,7 +215,7 @@
                 <label class="label--checkbox">
                   <input type="checkbox" name="link" value="monkey">
                   <div class="icon"><i class="fas fa-check"></i></div>
-                  <span>Landing page Monkey</span>
+                  <span>Monkey</span>
                 </label>
                 <i class="link icon--link icon-show"></i>
               </div>
@@ -299,7 +299,7 @@
                 <label class="label--checkbox">
                   <input type="checkbox" name="link" value="monkey">
                   <div class="icon"><i class="fas fa-check"></i></div>
-                  <span>Landing page Monkey</span>
+                  <span>Monkey</span>
                 </label>
                 <i class="link icon--link icon-show"></i>
               </div>
@@ -380,9 +380,11 @@
         </div>
         <div class="row modal__footer">
           <input placeholder="Generated link" id="generated-link"></input>
-          <button class="js--close-modal btn btn--secondary btn--save-link">Copy link</button>
-          <!--https://www.w3schools.com/howto/howto_js_copy_clipboard.asp-->
-          <button class="btn btn--save-link" type="submit">Save</button>
+          <div class="modal__footer__buttons">
+            <button class="js--close-modal btn btn--secondary btn--save-link">Copy link</button>
+            <!--https://www.w3schools.com/howto/howto_js_copy_clipboard.asp-->
+            <button class="btn btn--save-link" type="submit">Save</button>
+          </div>
         </div>
       </form>
     </div>
@@ -393,7 +395,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>General statistic</span>
+            <h1>General statistic</h1>
           </div>
           <div class="calendar__container">
             <div class="calendar__wrapper">
@@ -428,7 +430,6 @@
                   <div class="graph__wrapper">
                     <label>Earnings chart</label>
                     <canvas id="myChart"></canvas>
-                    <!--<img class="graph" src="images/graph.png"></img>-->
                   </div>
                 </div>
               </div>
@@ -437,7 +438,7 @@
         </div>
         <div class="page__card__container">
           <div class="card__header">
-            <span>Links</span>
+            <h1>Links</h1>
           </div>
           <div class="card__wrapper">
             <button class="btn btn__add--links">+ add new</button>
@@ -455,7 +456,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Details</span>
+            <h1>Details</h1>
           </div>
           <div class="card__wrapper">
             <div class="scroll-wrapper">
@@ -477,47 +478,6 @@
                 </thead>
                 <tbody id="detailsTable">
                 </tbody>
-                <!--<tbody id="detailsTable">
-                  <tr>
-                    <td>aff/sam_test</td>
-                    <td>17/08/02 (12:58)</td>
-                    <td>232</td>
-                    <td>114</td>
-                    <td>12</td>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>34,425.00</td>
-                    <td data-name="payout">234.00</td>
-                    <td>421,342.00</td>
-                    <td>cpl (200)</td>
-                  </tr>
-                  <tr>
-                    <td>aff/sam_test</td>
-                    <td>17/08/02 (12:58)</td>
-                    <td>232</td>
-                    <td>114</td>
-                    <td>12</td>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>36,425.00</td>
-                    <td data-name="payout">236.00</td>
-                    <td>421,342.00</td>
-                    <td>cpl (200)</td>
-                  </tr>
-                  <tr>
-                    <td>aff/sam_test</td>
-                    <td>17/08/02 (12:58)</td>
-                    <td>232</td>
-                    <td>114</td>
-                    <td>12</td>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>35,425.00</td>
-                    <td data-name="payout">235.00</td>
-                    <td>421,342.00</td>
-                    <td>cpl (200)</td>
-                  </tr>
-                </tbody>-->
               </table>
             </div>
           </div>
@@ -528,7 +488,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Links</span>
+            <h1>Links</h1>
           </div>
           <div class="card__wrapper">
             <button class="btn btn__add--links">+ add new</button>
@@ -547,7 +507,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Banners</span>
+            <h1>Banners</h1>
           </div>
           <div class="card__wrapper">
             <button class="btn btn__add--banners">+ add new</button>
@@ -566,52 +526,17 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Personal data</span>
+            <h1>Personal data</h1>
           </div>
           <div class="card__wrapper card__wrapper--form">
-            <div class="scroll-wrapper">
-              <form action="https://formspree.io/xyynerqy" method="POST">
-                <div class="field">
-                  <label>Name</label>
-                  <input type="text" name="user-name" required>
+            <div class="scroll-wrapper personal-data-form">
+              <form action="" method="POST" class="personal-data">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form__container--personal-data" id="personalData">
                 </div>
-                <div class="field">
-                  <label>Surname</label>
-                  <input type="text" name="user-surname" required>
+                <div class="row">
+                  <button type="submit" class="btn">Save</button>
                 </div>
-                <div class="field">
-                  <label>Email</label>
-                  <input type="email" name="user-mail" required>
-                </div>
-                <div class="field">
-                  <label>Phone</label>
-                  <input type="tel" name="user-tel">
-                </div>
-                <hr>
-                <div class="field">
-                  <label>Skype</label>
-                  <input type="text" name="user-skype">
-                </div>
-                <div class="field">
-                  <label>ICQ</label>
-                  <input type="text" name="user-icq">
-                </div>
-                <div class="field">
-                  <label>Msn</label>
-                  <input type="text" name="user-msn">
-                </div>
-                <hr>
-                <div class="field">
-                  <label>Wallet</label>
-                  <input type="text" name="user-wallet">
-                </div>
-                <hr>
-                <div class="field">
-                  <label>Password</label>
-                  <input type="password" name="user-password">
-                </div>
-                <hr>
-                <button type="submit" class="btn">Save</button>
               </form>
             </div>
           </div>
@@ -622,7 +547,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Payout</span>
+            <h1>Payout</h1>
           </div>
           <div class="card__wrapper">
           </div>
@@ -633,7 +558,7 @@
       <div class="page__container">
         <div class="page__card__container">
           <div class="card__header">
-            <span>Postback</span>
+            <h1>Postback</h1>
           </div>
           <div class="card__wrapper">
           </div>
@@ -658,12 +583,58 @@
     <td>{{visits}}</td>  
     <td>{{unique}}</td>  
     <td>{{signups}}</td>  
-    <td data-name="ftd">{{ftd}}</td>  
-    <td data-name="depositors">{{depositors}}</td>  
-    <td data-name="deposits">{{deposits}}</td>  
-    <td data-name="payout">{{payout}}</td>  
+    <td>{{ftd}}</td>  
+    <td>{{depositors}}</td>  
+    <td>{{deposits}}</td>  
+    <td>{{payout}}</td>  
     <td>{{turnover}}</td>  
     <td>{{deal}}</td>                
+  </script>
+  <script id="template-personal-data" type="text/x-handlebars-template">
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="user-name" value="{{name}}" required>
+    </div>
+    <div class="field">
+      <label>Surname</label>
+      <input type="text" name="user-surname" value="{{surname}}" required>
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="user-mail" value="{{mail}}" required>
+    </div>
+      <div class="field">
+        <label>Phone</label>
+        <input type="tel" name="user-tel" value="{{tel}}">
+    </div>
+    <div class="field">
+      <label>Phone</label>
+      <input type="tel" name="user-tel" value="{{tel}}">
+    </div>
+    <hr>
+    <div class="field">
+      <label>Skype</label>
+      <input type="text" name="user-skype" value="{{skype}}">
+    </div>
+    <div class="field">
+      <label>ICQ</label>
+      <input type="text" name="user-icq" value="{{icq}}">
+    </div>
+    <div class="field">
+      <label>Msn</label>
+      <input type="text" name="user-msn" value="{{msn}}">
+    </div>
+    <hr>
+    <div class="field">
+      <label>Wallet</label>
+      <input type="text" name="user-wallet" value="{{wallet}}">
+    </div>
+    <hr>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="user-password" value="{{password}}">
+    </div>
+    <hr>
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>

@@ -42,7 +42,7 @@
     }
 }
 
-  .nav__container.toggle {
+.nav__container.toggle {
     margin-left: 0;
     .nav__logo {
         @include flex(row, center, space-between);
@@ -193,8 +193,8 @@
         text-align: left;
         color: $link-color;
         .manager__photo {
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 2vh;
+            height: 2vh;
         }
         .manager__name {
             display: none;
@@ -208,12 +208,19 @@
 }
 
 @media (max-width: 767px) {
-    .nav__container.toggle {
+    .nav__container.toggle, .nav__container:hover {
+        .nav__menu{
+            //background-color: yellow;
+            .menu__link__icon {
+                padding: 0.75rem;
+                //color: yellow;
+            }
+        }
         .nav__manager {
-            line-height: 1rem;
+            line-height: 0.5vh;
             .manager__photo {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 5vh;
+                height: 5vh;
             }
         }
         .menu__link--quit{

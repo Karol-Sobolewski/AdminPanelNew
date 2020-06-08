@@ -3,8 +3,43 @@ import { settings, select, classNames } from './settings.js';
 import Links from './components/Links.js';
 import Banners from './components/Banners.js';
 import Details from './components/Details.js';
+import PersonalData from './components/Personal-Data.js';
 
 const app = {
+
+  getData() {
+    const thisApp = this;
+    thisApp.data = {};
+    const urls = {
+      linkTable: settings.db.url + `/` + settings.db.linkTable,
+      bannerTable: settings.db.url + `/` + settings.db.bannerTable,
+      detailsTable: settings.db.url + `/` + settings.db.detailsTable,
+      personalData: settings.db.url + `/` + settings.db.personalData,
+      
+    };
+    Promise.all([fetch(urls.linkTable), fetch(urls.bannerTable), fetch(urls.detailsTable), fetch(urls.personalData)])
+      .then(function (allResponses) {
+        const linksResponse = allResponses[0];
+        const bannersResponse = allResponses[1];
+        const detailsResponse = allResponses[2];
+        const personaldataResponse = allResponses[3];
+        return Promise.all([linksResponse.json(), bannersResponse.json(), detailsResponse.json(), personaldataResponse.json()]);
+      })
+      .then(function ([linkTable, bannerTable, detailsTable, personalData]) {
+        thisApp.data.linkTable = linkTable;
+        thisApp.data.bannerTable = bannerTable;
+        thisApp.data.detailsTable = detailsTable;
+        thisApp.data.personalData = personalData;
+        console.log(personalData);
+        
+
+        thisApp.initLinkTable();
+        thisApp.initbannerTable();
+        thisApp.initdetailsTable();
+        thisApp.initpersonalDataForm();
+      });
+  },
+
   initPages: function () {
     const thisApp = this;
 
@@ -135,30 +170,11 @@ const app = {
     });
   },
 
-  getData() {
+  initpersonalDataForm(){
     const thisApp = this;
-    thisApp.data = {};
-    const urls = {
-      linkTable: settings.db.url + `/` + settings.db.linkTable,
-      bannerTable: settings.db.url + `/` + settings.db.bannerTable,
-      detailsTable: settings.db.url + `/` + settings.db.detailsTable,
-    };
-    Promise.all([fetch(urls.linkTable), fetch(urls.bannerTable), fetch(urls.detailsTable)])
-      .then(function (allResponses) {
-        const linksResponse = allResponses[0];
-        const bannersResponse = allResponses[1];
-        const detailsResponse = allResponses[2];
-        return Promise.all([linksResponse.json(), bannersResponse.json(), detailsResponse.json()]);
-      })
-      .then(function ([linkTable, bannerTable, detailsTable]) {
-        thisApp.data.linkTable = linkTable;
-        thisApp.data.bannerTable = bannerTable;
-        thisApp.data.detailsTable = detailsTable;
-
-        thisApp.initLinkTable();
-        thisApp.initbannerTable();
-        thisApp.initdetailsTable();
-      });
+    for (const personalData in thisApp.data.personalData) {
+      new PersonalData(thisApp.data.personalData[personalData]);
+    }
   },
 
   initModal() {

@@ -7,17 +7,12 @@
   top: 0;
   left: 0;
   z-index: 999;
-
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-
   justify-content: center;
   align-items: center;
-
   overflow: auto;
-  //padding: 30px;
-
   display: none;
 }
 
@@ -48,19 +43,17 @@
 }
 
 .modal__header {
+  flex-wrap: nowrap;
   h1 {
     padding: 5px 10px;
   }
   @include flex(row, center, space-between);
   width: 100%;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
   border-bottom: 1px solid $medium-color;
 }
 
 .modal__menu {
+  flex-wrap: nowrap;
   @include flex(row, flex-end, space-around);
   width: 100%;
   border-bottom: 1px solid $medium-color;
@@ -79,6 +72,12 @@
   width: 100%;
 }
 
+.modal__footer__buttons{
+  @include flex(row, center, center);
+}
+
+//links
+
 .field__modal {
   @include flex(column, start, flex-end);
   label {
@@ -90,7 +89,6 @@
 }
 
 .generated-link {
-  //margin-left: 0.5vw;
   flex: 8 0 0;
 }
 

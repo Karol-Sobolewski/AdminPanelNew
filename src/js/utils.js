@@ -2,8 +2,9 @@
 
 const utils = {}; // eslint-disable-line no-unused-vars
 
-utils.createDOMFromHTML = function(htmlString, tag = `div`) {
+utils.createDOMFromHTML = function(htmlString, tag = `div`, className) {
   const elem = document.createElement(tag);
+  elem.setAttribute(`class`, className);
   elem.innerHTML = htmlString.trim();
   return elem;
 };

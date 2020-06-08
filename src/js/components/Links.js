@@ -18,22 +18,22 @@ class Links {
     thisLinks.formInputs = thisLinks.form.querySelectorAll(`input, select`);
 
     // console.log(`form inputs`, thisLinks.formInputs);
-    for (const input in thisLinks.formInputs) {
-      //input.addEventListener(`change`, function(){
-      //console.log(`click`, input);
-      //});
-    }
-    const formData = utils.serializeFormToObject(thisLinks.dom.form);
-    // console.log(`form data`, formData);
-    thisLinks.generateLink(data);
+    //for (const input in thisLinks.formInputs) {
+    //input.addEventListener(`change`, function(){
+    //console.log(`click`, input);
+    //});
   }
+  //const formData = utils.serializeFormToObject(thisLinks.dom.form);
+  // console.log(`form data`, formData);
+  //thisLinks.generateLink(data);
+  //}
 
-  generateLink(data) {
-    //const input = data.form.getElementsByName(`scheme-name`);
-    //console.log(`data`, data);
+  //generateLink(data) {
+  //const input = data.form.getElementsByName(`scheme-name`);
+  //console.log(`data`, data);
   
-    //console.log('links', thisLinks.formInputs);
-  }
+  //console.log('links', thisLinks.formInputs);
+  //}
 
   renderLinkTable() {
     const thisLinks = this;
