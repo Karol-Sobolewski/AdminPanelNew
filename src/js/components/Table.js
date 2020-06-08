@@ -55,7 +55,7 @@ class Table {
       thead.addEventListener(`click`, function(event) {
         event.preventDefault();
         console.log(`click`);
-        if(event.target.tagName === `TH`) /*thisTable.sortByParam(data, event.target.getAttribute(`data-name`))*/;
+        if(event.target.tagName === `TH`) thisTable.sortByParam(data, event.target.getAttribute(`data-name`));
       });
     }
     
@@ -79,7 +79,7 @@ class Table {
     });
       
     lastParam = param;
-    thisTable.renderTable(sortedData);
+    thisTable.renderLinkTable(sortedData);
   }
 
   renderLinkTable(data) {
