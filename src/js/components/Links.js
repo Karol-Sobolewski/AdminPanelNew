@@ -1,13 +1,14 @@
-import {templates, select } from '../settings.js';
-import utils from '../utils.js';
+//import {templates, select } from '../settings.js';
+//import utils from '../utils.js';
+import Modal from './Modals.js';
 
-class Links {
+class Link {
   constructor(data) {
     const thisLinks = this;
 
     thisLinks.data = data;
-    thisLinks.renderLinkTable();
-    thisLinks.toggleLinkModal();
+    //thisLinks.renderLinkTable();
+    thisLinks.toggleAddLinkModal();
     thisLinks.getElements();
   }
 
@@ -16,26 +17,10 @@ class Links {
     thisLinks.dom = {};
     thisLinks.form = document.querySelector(`.form__addLink`);
     thisLinks.formInputs = thisLinks.form.querySelectorAll(`input, select`);
-
-    // console.log(`form inputs`, thisLinks.formInputs);
-    //for (const input in thisLinks.formInputs) {
-    //input.addEventListener(`change`, function(){
-    //console.log(`click`, input);
-    //});
   }
-  //const formData = utils.serializeFormToObject(thisLinks.dom.form);
-  // console.log(`form data`, formData);
-  //thisLinks.generateLink(data);
-  //}
 
-  //generateLink(data) {
-  //const input = data.form.getElementsByName(`scheme-name`);
-  //console.log(`data`, data);
-  
-  //console.log('links', thisLinks.formInputs);
-  //}
 
-  renderLinkTable() {
+  /*renderLinkTable() {
     const thisLinks = this;
     const generateHTML = templates.linkTable(thisLinks.data);
 
@@ -47,23 +32,18 @@ class Links {
     for (const container of linkContainers) {
       container.appendChild(thisLinks.links.cloneNode(true));
     }
-  }
+  }*/
 
-  openModal(modal) {
-    document.querySelectorAll(`#overlay > *`).forEach(function (modal) {
-      modal.classList.remove(`show`);
-    });
-    document.querySelector(`#overlay`).classList.add(`show`);
-    document.querySelector(modal).classList.add(`show`);
-  }
-
-  toggleLinkModal() {
-    const thisLinks = this;
-    // console.log(`links`, this);
-    const addlinks = document.querySelectorAll(`.btn__add--links`);
-    addlinks.forEach((element) =>
+  toggleAddLinkModal() {
+    //const thisLinks = this;
+    
+    const addLink = document.querySelectorAll(`.btn__add--link`);
+    addLink.forEach((element) =>
       element.addEventListener(`click`, function () {
-        thisLinks.openModal(`#linkModal`);
+        //thisLinks.openModal(`#linkModal`);
+        console.log(`click link`);
+        
+        new Modal(`#linkModal`);
       })
     );
     /*for(const addlink of addlinks){
@@ -76,4 +56,4 @@ class Links {
           }*/
   }
 }
-export default Links;
+export default Link;

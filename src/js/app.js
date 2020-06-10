@@ -1,7 +1,7 @@
 import { settings, select, classNames } from './settings.js';
-import Links from './components/Links.js';
-import Banners from './components/Banners.js';
-import Details from './components/Details.js';
+import Link from './components/Links.js';
+import Banner from './components/Banners.js';
+//import Details from './components/Details.js';
 import PersonalData from './components/Personal-Data.js';
 import Table from './components/Table.js';
 
@@ -105,66 +105,16 @@ const app = {
     const values = Object.values(thisApp.data);
     values.splice(-1, 1);
     new Table(values);
-    
-    /*for (const linkData in linkDatas) {
-      new Links(linkDatas[linkData]);
-      console.log(`Links`, thisApp.data.linkTable[linkData]);
-    }
-    for (const detailsData in thisApp.data.detailsTable) {
-      new Details(thisApp.data.detailsTable[detailsData]);
-    }
-    for (const bannerData in thisApp.data.bannerTable) {
-      new Banners(thisApp.data.bannerTable[bannerData]);
-    }*/
   },
 
-  sortTable(table, sortColumn) {
+  initAddLink(){
     const thisApp = this;
-    const tableBody = table.querySelector(`tbody`);
-    const tableData = thisApp.table2data(tableBody);
-    tableData.sort((a, b) => {
-      if (a[sortColumn] > b[sortColumn]) {
-        return 1;
-      }
-      return -1;
-    });
-    thisApp.data2table(tableBody, tableData);
+    new Link(thisApp.data);
   },
 
-  table2data(tableBody) {
-    const tableData = [];
-    tableBody.querySelectorAll(`tr`).forEach((row) => {
-      const rowData = [];
-      row.querySelectorAll(`td`).forEach((cell) => {
-        rowData.push(cell.innerText);
-      });
-      tableData.push(rowData);
-    });
-    return tableData;
-  },
-
-  data2table(tableBody, tableData) {
-    tableBody.querySelectorAll(`tr`).forEach((row, i) => {
-      const rowData = tableData[i];
-      row.querySelectorAll(`td`).forEach((cell, j) => {
-        cell.innerText = rowData[j];
-      });
-      tableData.push(rowData);
-    });
-  },
-
-  initdetailsTable() {
-    
-    const table = document.querySelector(`.sortable`);
-
-    const thead = table.querySelector(`thead`);
-
-    thead.addEventListener(`click`, function () {
-      if (event.target.tagName === `TH`) {
-        const dataset = event.target.dataset;
-        thisApp.sortTable(table, dataset);
-      }
-    });
+  initAddBanner() {
+    const thisApp = this;
+    new Banner(thisApp.data);
   },
 
   initpersonalDataForm() {
@@ -199,14 +149,6 @@ const app = {
         closeModal();
       }
     });
-  },
-
-  openModal(modal) {
-    document.querySelectorAll(`#overlay > *`).forEach(function (modal) {
-      modal.classList.remove(`show`);
-    });
-    document.querySelector(`#overlay`).classList.add(`show`);
-    document.querySelector(modal).classList.add(`show`);
   },
 
   initChart() {
@@ -253,6 +195,8 @@ const app = {
     thisApp.getData();
     thisApp.initModal();
     thisApp.initChart();
+    thisApp.initAddLink();
+    thisApp.initAddBanner();
   },
 };
 

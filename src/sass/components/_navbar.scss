@@ -7,12 +7,20 @@
     width: 12rem;
     height: 100vh;
     background-color: $dark-color;
-    &:hover{
+    .hamburger {
+        display: none;
+    }
+}
+@media (min-width: 1200px) {
+    .nav__container:hover{
         margin-left: 0;
         .nav__logo {
             @include flex(row, center, space-between);
             .logo {
             display: block;
+            }
+            .logo--mini {
+                display: none;
             }
         }
         .nav__menu {
@@ -38,8 +46,8 @@
             .manager__name {
                 display: block;
             }
-        }
     }
+}
 }
 
 .nav__container.toggle {
@@ -48,6 +56,9 @@
         @include flex(row, center, space-between);
         .logo {
         display: block;
+        }
+        .logo--mini {
+            display: none;
         }
     }
     .nav__menu {
@@ -131,6 +142,9 @@
         font-family: 'Pacifico', cursive;
         color: $light-color;
     }
+    .logo--mini {
+        display: block;
+    }
     
     .hamburger{
         cursor: pointer;
@@ -208,7 +222,15 @@
 }
 
 @media (max-width: 767px) {
-    .nav__container.toggle, .nav__container:hover {
+    .nav__container{
+        .logo--mini {
+            display: none;
+        }
+        .hamburger {
+            display: block;
+        }
+    }
+    .nav__container.toggle/*, .nav__container:hover*/ {
         .nav__menu{
             //background-color: yellow;
             .menu__link__icon {
@@ -230,6 +252,8 @@
             } 
         } 
     }
+    
+
     .nav__account {
         display: block;
     }

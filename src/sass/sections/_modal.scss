@@ -80,11 +80,15 @@
 
 .field__modal {
   @include flex(column, start, flex-end);
+  width: 30%;
   label {
     padding: 1vh 0 1vh 0;
   }
   &--wide {
     width: 40%;
+  }
+  &--narrow {
+    width: 10%;
   }
 }
 

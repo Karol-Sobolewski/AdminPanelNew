@@ -93,7 +93,6 @@ select {
     @include flex(row, center, space-between);
     width: 90%;
     &:hover {
-    
       background-color: $medium-color;
     }
   }

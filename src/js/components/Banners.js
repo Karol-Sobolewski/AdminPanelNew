@@ -1,27 +1,29 @@
-import {templates, select } from '../settings.js';
-import utils from '../utils.js';
+import Modal from './Modals.js';
 
-class Banners {
+class Banner {
   constructor(data) {
     const thisBanners = this;
 
     thisBanners.data = data;
     //thisLinks.renderLinkTable();
-    thisBanners.renderdetailsTable();
+    thisBanners.toggleAddBannerModal();
   }
 
-  renderdetailsTable() {
-    const thisBanners = this;
-    const generateHTML = templates.bannerTable(thisBanners.data);
-
-    thisBanners.banners = utils.createDOMFromHTML(generateHTML, `tr`);
-
-    const bannerContainer = document.querySelector(
-      select.containerOf.bannerTable
+  toggleAddBannerModal() {
+    //const thisBanners = this;
+    
+    const addBanner = document.querySelectorAll(`.btn__add--banner`);
+    //console.log(addBanner);
+    
+    addBanner.forEach((element) =>
+      element.addEventListener(`click`, function () {
+        //thisLinks.openModal(`#linkModal`);
+        console.log(`click link`);
+        
+        new Modal(`#bannerModal`);
+      })
     );
-
-    bannerContainer.appendChild(thisBanners.banners);
   }
 }
-
-export default Banners;
+export default Banner;
+//btn__add--banners

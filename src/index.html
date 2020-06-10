@@ -19,7 +19,7 @@
     </div>
     <div class="header__wrapper header__wrapper--wide">
       <i class="icon--link icon-profile"></i>
-      <a class="link header__link">Leonardo</a>
+      <a class="link header__link">Leonardo DiGarden</a>
     </div>
     <div class="header__wrapper header__wrapper--narrow">
       <i class="icon--link icon-notification"></i>
@@ -34,6 +34,7 @@
     <div class="nav__wrapper nav__logo">
       <h1 class="logo" href="#general">JUST DO IT</h1>
       <i class="hamburger fas fa-bars"></i>
+      <h1 class="logo logo--mini">J</h1>
     </div>
     <div class="nav__wrapper nav__menu">
       <ul class="menu__link__wrapper">
@@ -106,18 +107,19 @@
         <div class="modal__menu row">
           <div class="field__modal field__modal--wide">
             <h2>Scheme name</h2>
-            <input type="text" name="scheme-name" placeholder="Name" required>
+            <input type="text" name="link--scheme-name" placeholder="Name" required>
           </div>
           <div class="field__modal field__modal--wide">
-            <select name="compain" required>
-              <option value="select">Select compain</option>
+            <h2>Compain</h2>
+            <select name="link--compain" required>
+              <option value="select" disabled selected>Select compain</option>
               <option value="sth1">sth1</option>
               <option value="sth2">sth2</option>
             </select>
           </div>
-          <div class="field__modal">
+          <div class="field__modal field__modal--narrow">
             <h2>Language</h2>
-            <select name="language">
+            <select name="link--language">
               <option value="en">EN</option>
               <option value="pl">PL</option>
               <option value="ES">ES</option>
@@ -388,6 +390,241 @@
         </div>
       </form>
     </div>
+    <div class="modal" id="bannerModal">
+      <div class="row modal__header">
+        <h1>Add Banner</h1>
+        <span class="btn-close js--close-modal">x</span>
+      </div>
+      <form class="form__addBanner">
+        <div class="modal__menu row">
+          <div class="field__modal field__modal--wide">
+            <h2>Scheme name</h2>
+            <input type="text" name="scheme-name" placeholder="Name" required>
+          </div>
+          <div class="field__modal field__modal--wide">
+            <h2>Compain</h2>
+            <select name="banner--compain" required>
+              <option value="select" disabled selected>Select compain</option>
+              <option value="sth1">sth1</option>
+              <option value="sth2">sth2</option>
+            </select>
+          </div>
+          <div class="field__modal field__modal--narrow">
+            <h2>Language</h2>
+            <select name="banner--language">
+              <option value="en">EN</option>
+              <option value="pl">PL</option>
+              <option value="ES">ES</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal__menu row">
+          <div class="field__modal">
+            <h2>Width-Height</h2>
+            <select name="banner--dimensions" required>
+              <option value="select" disabled selected>Select</option>
+              <option value="sth1">sth1</option>
+              <option value="sth2">sth2</option>
+            </select>
+          </div>
+          <div class="field__modal">
+            <h2>Design</h2>
+            <select name="banner--design" required>
+              <option value="select" disabled selected>Select</option>
+              <option value="sth1">sth1</option>
+              <option value="sth2">sth2</option>
+            </select>
+          </div>
+          <div class="field__modal">
+            <h2>File Type</h2>
+            <select name="banner--file-type">
+              <option value="select" disabled selected>Select</option>
+              <option value="jpg">.jpg</option>
+              <option value="png">.pngL</option>
+              <option value="gif">.gif</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal__content row">
+          <div class="col-xl-6 col-sm-12">
+            <div class="row">
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="monkey" checked>
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Monkey</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="templates">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Templates store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="random">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Random text</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="lpchoice">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>LP Your choice</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="lpwallet">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Lp Wallet</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="eshop">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>E-Shop 01</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="toystore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Toy Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="bookstore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Book Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="charity">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Charity</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="iconsstore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>LP Icons Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-sm-12">
+            <div class="row">
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="monkey">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Monkey</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="templates">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Templates store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="random">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Random text</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="lpchoice">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>LP Your choice</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="lpwallet">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Lp Wallet</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="eshop">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>E-Shop 01</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="toystore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Toy Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="bookstore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Book Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="charity">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>Charity</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+              <div class="field field--checkbox">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="link" value="iconsstore">
+                  <div class="icon"><i class="fas fa-check"></i></div>
+                  <span>LP Icons Store</span>
+                </label>
+                <i class="link icon--link icon-show"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row modal__footer">
+          <input placeholder="Generated banner" id="generated-banner"></input>
+          <div class="modal__footer__buttons">
+            <button class="js--close-modal btn btn--secondary btn--save-link">Copy link</button>
+            <!--https://www.w3schools.com/howto/howto_js_copy_clipboard.asp-->
+            <button class="btn btn--save-banner" type="submit">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
   <!--Pages-->
   <div id="pages">
@@ -441,14 +678,14 @@
             <h1>Links</h1>
           </div>
           <div class="card__wrapper">
-            <button class="btn btn__add--links">+ add new</button>
+            <button class="btn btn__add--link">+ add new</button>
             <div class="scroll-wrapper">
               <table class="linkTable">
                 <thead></thead>
                 <tbody></tbody>
               </table>
             </div>
-            <button class="btn btn__add--links">+ add new</button>
+            <button class="btn btn__add--link">+ add new</button>
           </div>
         </div>
     </section>
@@ -461,28 +698,9 @@
           <div class="card__wrapper">
             <div class="scroll-wrapper">
               <table class="detailsTable">
-                <thead></thead>
+                <thead class="thead"></thead>
                 <tbody></tbody>
               </table>
-              <!--<table class="sortable">
-                <thead>
-                  <tr>
-                    <th data-name="tracker-name">Tracker name</th>
-                    <th data-name="initialted-date">Initialted date</th>
-                    <th data-name="visits">Visits</th>
-                    <th data-name="unique">Unique</th>
-                    <th data-name="signups">Signups</th>
-                    <th data-name="ftd">FTD</th>
-                    <th data-name="depositors">Depositors</th>
-                    <th data-name="deposits">Deposits ($)</th>
-                    <th data-name="payout">Payout ($)</th>
-                    <th data-name="turnover">Turnover</th>
-                    <th data-name="deal">Deal</th>
-                  </tr>
-                </thead>
-                <tbody id="detailsTable">
-                </tbody>
-              </table>-->
             </div>
           </div>
         </div>
@@ -495,18 +713,14 @@
             <h1>Links</h1>
           </div>
           <div class="card__wrapper">
-            <button class="btn btn__add--links">+ add new</button>
+            <button class="btn btn__add--link">+ add new</button>
             <div class="scroll-wrapper">
               <table class="linkTable">
                 <thead></thead>
                 <tbody></tbody>
               </table>
-              <!--<table class="linkTable">
-                <tbody id="linkTable">
-                </tbody>
-              </table>-->
             </div>
-            <button class="btn btn__add--links">+ add new</button>
+            <button class="btn btn__add--link">+ add new</button>
           </div>
         </div>
       </div>
@@ -518,7 +732,7 @@
             <h1>Banners</h1>
           </div>
           <div class="card__wrapper">
-            <button class="btn btn__add--banners">+ add new</button>
+            <button class="btn btn__add--banner">+ add new</button>
             <div class="scroll-wrapper">
               <table class="bannerTable">
                 <thead></thead>
@@ -529,7 +743,7 @@
                 </tbody>
               </table>-->
             </div>
-            <button class="btn .btn__add--banners">+ add new</button>
+            <button class="btn .btn__add--banner">+ add new</button>
           </div>
         </div>
       </div>

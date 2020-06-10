@@ -1,6 +1,6 @@
-import {templates, select } from '../settings.js';
+//import {templates, select } from '../settings.js';
 //import utils from '../utils.js';
-
+let lastParam = ``;
 class Table {
   constructor(data) {
     const thisTable = this;
@@ -11,7 +11,7 @@ class Table {
     const linkData = thisTable.data[0];
     const bannerData = thisTable.data[1];
     const detailsData = thisTable.data[2];
-    console.log(linkData);
+    //console.log(linkData);
     thisTable.renderLinkTable(linkData);
     thisTable.renderBannerTable(bannerData);
     thisTable.renderDetailsTable(detailsData);
@@ -24,6 +24,7 @@ class Table {
     for(const param in refObj) {
       html += `<th data-name="${param}">${param}</th>`;
     }
+    //console.log(html);
     
     return html;
   }
@@ -31,7 +32,7 @@ class Table {
   generateTBODY(data, icons) {
     let html = ``;
     for(const doc of data) {
-      html += `<tr class="">`;
+      html += `<tr>`;
       const values = Object.values(doc);
       values.splice(0, 1);
    
@@ -40,6 +41,7 @@ class Table {
       }
       html += `<td>${icons}</td>`;
       html += `</tr>`;   
+      //console.log(html);
     }
     
     return html;
@@ -47,30 +49,35 @@ class Table {
 
   addTableHeadListener(data) {
     const thisTable = this;
+    //console.log(data);
     
     const theads = document.querySelectorAll(`table thead`);
+    //console.log(thead);
     for(const thead of theads){
-      console.log(thead);
-        
       thead.addEventListener(`click`, function(event) {
         event.preventDefault();
-        console.log(`click`);
         if(event.target.tagName === `TH`) thisTable.sortByParam(data, event.target.getAttribute(`data-name`));
       });
-    }
-    
-    
+    } 
   }
 
   sortByParam(data, param) {
+
     const thisTable = this;
-    let lastParam = ``;
+    
     const sortedData = data.sort((a, b) => {
+      //console.log(data, param);
+    
+      //console.log(a[param]);
       if(param === lastParam) {
         if (a[param] < b[param]) return 1;
         if (a[param] > b[param]) return -1;
+        console.log(`sort 1`);
+
       } 
       else {
+        console.log(`sort 2`);
+        
         if (a[param] > b[param]) return 1;
         if (a[param] < b[param]) return -1;
       }
@@ -79,7 +86,7 @@ class Table {
     });
       
     lastParam = param;
-    thisTable.renderLinkTable(sortedData);
+    thisTable.renderDetailsTable(sortedData);
   }
 
   renderLinkTable(data) {
@@ -95,7 +102,7 @@ class Table {
     }
     
     
-    thisTable.addTableHeadListener(data);
+    //thisTable.addTableHeadListener(data);
   }
 
   renderBannerTable(data) {
